@@ -1,0 +1,42 @@
+<section data-topic="functions" data-menu-title="@function intro">
+  <h4><mark>@function</mark> turns CSS into a toolkit</h4>
+  <small balance>The proposal lets us author callable helpers with parameters, default values, and returns. We finally reuse the same math without copy and paste.</small>
+</section>
+<section data-topic="functions" data-menu-title="@function intro">
+  <comparison>
+    <left>
+      <article class="code-stack">
+        <pre>
+          <code data-trim data-line-numbers class="hljs css">
+          @function flux-glow($energy, $base: 8px) {
+            @return clamp(4px, $energy * $base, 32px);
+          }
+
+          .flux-panel {
+            box-shadow: 0 0 flux-glow(attr(data-energy number, 1))
+              rgba(0, 245, 255, 0.4);
+          }
+        </code></pre>
+      </article>
+    </left>
+    <right>
+      <small>
+        <article class="demo-panel flux-panel" id="demo-function-intro" data-era="future" data-speed="76" data-energy="1.21" style="--flux-speed: 76; --flux-energy: 1.21">
+          <header>
+            <span>Helper output</span>
+            <output data-live-value-target="#demo-function-intro" data-live-value="data-energy" data-live-format="gw"></output>
+          </header>
+          <div class="flux-radial" data-label="fn"></div>
+          <p class="status">One helper defines the glow thickness.</p>
+        </article>
+      </small>
+      <div class="control-row">
+        <label>
+          Energy
+          <input type="range" min="0.4" max="1.6" step="0.01" value="1.21" data-attr-slider-target="#demo-function-intro" data-attr-name="data-energy" data-attr-style-var="--flux-energy" />
+        </label>
+      </div>
+    </right>
+  </comparison>
+  <aside class="notes">@function is in CSS Values 5 and will feel natural once typed attr feeds it.</aside>
+</section>

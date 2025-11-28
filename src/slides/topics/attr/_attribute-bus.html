@@ -1,0 +1,92 @@
+<section data-topic="foundations" data-menu-title="Attribute bus">
+  <h4>HTML attributes as a <mark>state bus</mark></h4>
+  <small balance>
+    The markup already knows the active era, speed, and flux capacity. Prefix attributes with a component namespace, keep values human readable, and let CSS subscribe without extra classes.
+  </small>
+</section>
+<section data-topic="foundations" data-menu-title="Attribute bus">
+  <comparison>
+    <left>
+      <article class="code-stack">
+        <pre>
+        <code data-trim data-line-numbers class="hljs html">
+        &lt;section
+          class=&quot;timeline&quot;
+          data-era=&quot;future&quot;
+          data-speed=&quot;88&quot;
+          data-energy=&quot;1.21&quot;&gt;
+          &lt;button data-era=&quot;past&quot;&gt;1985&lt;/button&gt;
+          &lt;button data-era=&quot;future&quot;&gt;2015&lt;/button&gt;
+        &lt;/section&gt;
+      </code></pre>
+        <pre>
+        <code data-trim data-line-numbers class="hljs css">
+        :where(.timeline) {
+          --era: attr(data-era token, past);
+          --speed: attr(data-speed number, 0);
+          --energy: attr(data-energy number, 0.5);
+        }
+
+        .timeline button[data-era='future'] {
+          border-color: hsl(196 100% 70%);
+        }
+      </code></pre>
+      </article>
+    </left>
+    <right>
+      <small>
+        <article class="demo-panel" id="demo-attr-bus" data-era="past" data-speed="64" data-energy="0.88" style="--flux-speed: 64; --flux-energy: 0.88">
+          <header>
+            <span>Shared state</span>
+            <output data-live-value-target="#demo-attr-bus" data-live-value="data-era"></output>
+          </header>
+          <ul class="contract-table" aria-label="Attribute contract">
+            <li>
+              <span>data-era</span>
+              <span>past | future | temporal</span>
+            </li>
+            <li>
+              <span>data-speed</span>
+              <span>number (mph)</span>
+            </li>
+            <li>
+              <span>data-energy</span>
+              <span>number (GW)</span>
+            </li>
+          </ul>
+          <div class="system-grid" aria-live="polite">
+            <article>
+              <h5>Era badge</h5>
+              <p>
+                <output data-live-value-target="#demo-attr-bus" data-live-value="data-era"></output>
+              </p>
+            </article>
+            <article>
+              <h5>Speed</h5>
+              <p>
+                <output data-live-value-target="#demo-attr-bus" data-live-value="data-speed" data-live-format="mph"></output>
+              </p>
+            </article>
+            <article>
+              <h5>Flux</h5>
+              <p>
+                <output data-live-value-target="#demo-attr-bus" data-live-value="data-energy" data-live-format="gw"></output>
+              </p>
+            </article>
+          </div>
+        </article>
+      </small>
+      <div class="control-row">
+        <button type="button" data-attr-target="#demo-attr-bus" data-attr-name="data-era" data-attr-value="past" data-attr-group="era-demo-2" aria-pressed="true">Past</button>
+        <button type="button" data-attr-target="#demo-attr-bus" data-attr-name="data-era" data-attr-value="future" data-attr-group="era-demo-2" aria-pressed="false">Future</button>
+        <button type="button" data-attr-target="#demo-attr-bus" data-attr-name="data-speed" data-attr-value="40" data-attr-style-var="--flux-speed" data-attr-group="speed-demo-2" aria-pressed="false">
+          40 mph
+        </button>
+        <button type="button" data-attr-target="#demo-attr-bus" data-attr-name="data-speed" data-attr-value="88" data-attr-style-var="--flux-speed" data-attr-group="speed-demo-2" aria-pressed="false">
+          88 mph
+        </button>
+      </div>
+    </right>
+  </comparison>
+  <aside class="notes">Document attribute contracts directly in the markup so every component can subscribe with typed attr.</aside>
+</section>

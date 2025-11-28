@@ -1,0 +1,63 @@
+<!-- Slide 3: if() with attr() -->
+<section data-topic="branching" data-menu-title="if() + attr()">
+  <h3><mark>if()</mark> meets <mark>attr()</mark></h3>
+  <small balance>Read from HTML, branch in CSS. The ultimate reactive pattern.</small>
+</section>
+<section data-topic="branching" data-menu-title="if() + attr()">
+  <h4>Reactive styling</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs html">
+    &lt;button data-loading="true"&gt;Submit&lt;/button&gt;
+    </code>
+  </pre>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    button {
+      /* Disable pointer when loading */
+      pointer-events: if(
+        attr(data-loading token) = true,
+        none,
+        auto
+      );
+
+      /* Show spinner or text */
+      opacity: if(
+        attr(data-loading token) = true,
+        0.6,
+        1
+      );
+    }
+
+    button::after {
+      content: if(
+        attr(data-loading token) = true,
+        'Loading...',
+        ''
+      );
+    }
+    </code>
+  </pre>
+</section>
+<section data-topic="branching" data-menu-title="Numeric thresholds">
+  <h4>Numeric thresholds</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs html">
+    &lt;div class="meter" data-value="85"&gt;&lt;/div&gt;
+    </code>
+  </pre>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    .meter {
+      --value: attr(data-value number, 0);
+
+      /* Color by threshold */
+      --color: if(var(--value) >= 80, #00ff88,
+               if(var(--value) >= 50, #ffaa00,
+                  #ff4444));
+
+      background: var(--color);
+    }
+    </code>
+  </pre>
+  <small balance>Nested <code>if()</code> creates multi-level branching.</small>
+</section>

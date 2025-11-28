@@ -1,0 +1,84 @@
+<!-- Slide 6: @function use cases -->
+<section data-topic="functions" data-menu-title="Use cases">
+  <h3>Powerful <mark>Use Cases</mark></h3>
+  <small balance>From design tokens to animations, functions enable reusable patterns.</small>
+</section>
+<section data-topic="functions" data-menu-title="Color functions">
+  <h4>Color manipulation</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* Lighten/darken with oklch */
+    @function lighten($color, $amount) {
+      @return oklch(from $color calc(l + $amount) c h);
+    }
+
+    @function darken($color, $amount) {
+      @return oklch(from $color calc(l - $amount) c h);
+    }
+
+    @function alpha($color, $opacity) {
+      @return oklch(from $color l c h / $opacity);
+    }
+
+    .button {
+      --base: #0066cc;
+      background: var(--base);
+    }
+
+    .button:hover {
+      background: lighten(var(--base), 0.1);
+    }
+
+    .button:active {
+      background: darken(var(--base), 0.1);
+    }
+    </code>
+  </pre>
+</section>
+<section data-topic="functions" data-menu-title="Animation helpers">
+  <h4>Animation helpers</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* Stagger delay based on index */
+    @function stagger($index, $base: 50ms) {
+      @return calc($index * $base);
+    }
+
+    /* Easing curves */
+    @function ease-out-expo() {
+      @return cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .list-item {
+      --index: attr(data-index number, 0);
+      animation: fade-in 0.4s ease-out-expo();
+      animation-delay: stagger(var(--index));
+    }
+    </code>
+  </pre>
+</section>
+<section data-topic="functions" data-menu-title="Layout helpers">
+  <h4>Layout calculations</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* Container width with max */
+    @function container($max: 1200px, $padding: 1rem) {
+      @return min(calc(100% - $padding * 2), $max);
+    }
+
+    /* Aspect ratio box height */
+    @function aspect-height($width, $ratio) {
+      @return calc($width / $ratio);
+    }
+
+    .wrapper {
+      width: container();
+      margin-inline: auto;
+    }
+
+    .video {
+      height: aspect-height(100%, 1.777); /* 16:9 */
+    }
+    </code>
+  </pre>
+</section>

@@ -1,0 +1,57 @@
+<!-- Slide 2: Parameters and defaults -->
+<section data-topic="functions" data-menu-title="Parameters">
+  <h3>Parameters and <mark>Defaults</mark></h3>
+  <small balance>Flexible inputs with sensible fallbacks.</small>
+</section>
+<section data-topic="functions" data-menu-title="Parameters">
+  <h4>Required parameters</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* Simple function with one param */
+    @function double($value) {
+      @return calc($value * 2);
+    }
+
+    .box {
+      width: double(50px);   /* 100px */
+      height: double(3rem);  /* 6rem */
+    }
+    </code>
+  </pre>
+</section>
+<section data-topic="functions" data-menu-title="Default values">
+  <h4>Default values</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* Spacing function with defaults */
+    @function space($multiplier: 1, $base: 0.5rem) {
+      @return calc($multiplier * $base);
+    }
+
+    .card {
+      padding: space();        /* 0.5rem */
+      margin: space(2);        /* 1rem */
+      gap: space(4, 0.25rem);  /* 1rem */
+    }
+    </code>
+  </pre>
+</section>
+<section data-topic="functions" data-menu-title="Multiple params">
+  <h4>Multiple parameters</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* Fluid sizing with min, preferred, max */
+    @function fluid($min, $preferred, $max) {
+      @return clamp($min, $preferred, $max);
+    }
+
+    h1 {
+      font-size: fluid(1.5rem, 4vw, 3rem);
+    }
+
+    .container {
+      width: fluid(300px, 80%, 1200px);
+    }
+    </code>
+  </pre>
+</section>

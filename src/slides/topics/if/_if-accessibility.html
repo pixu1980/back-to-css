@@ -1,0 +1,51 @@
+<section data-topic="branching" data-menu-title="if() + A11y">
+  <h4>Accessibility with <mark>if()</mark></h4>
+  <small balance>Combine <code>if()</code> with custom properties set from media queries to honor reduced motion. The same timeline animation dials itself down when the user requests it.</small>
+</section>
+<section data-topic="branching" data-menu-title="if() + A11y">
+  <comparison>
+    <left>
+      <article class="code-stack">
+        <pre>
+          <code data-trim data-line-numbers class="hljs css">
+          .flux-panel::after {
+            content: if(
+              attr(data-speed number, 0) >= 88,
+              'Announce: jump imminent',
+              'Announce: charging'
+            );
+          }
+
+          .flux-panel {
+            aria-label: if(
+              attr(data-speed number, 0) >= 88,
+              'Flux jump imminent',
+              'Flux charging'
+            );
+          }
+        </code></pre>
+      </article>
+    </left>
+    <right>
+      <small>
+        <article class="demo-panel flux-panel" id="demo-if-a11y" data-era="future" data-speed="60" data-energy="1.0" style="--flux-speed: 60; --flux-energy: 1">
+          <header>
+            <span>Announcement</span>
+            <output data-live-value-target="#demo-if-a11y" data-live-value="data-speed" data-live-format="mph"></output>
+          </header>
+          <div class="flux-radial" data-label="a11y"></div>
+          <p class="status">Motion respects <code>--motion-ok</code>.</p>
+        </article>
+      </small>
+      <div class="control-row">
+        <button type="button" data-attr-target="#demo-if-a11y" data-attr-name="data-speed" data-attr-value="60" data-attr-style-var="--flux-speed" data-attr-group="if-a11y" aria-pressed="true">
+          Charging
+        </button>
+        <button type="button" data-attr-target="#demo-if-a11y" data-attr-name="data-speed" data-attr-value="88" data-attr-style-var="--flux-speed" data-attr-group="if-a11y" aria-pressed="false">
+          Jump ready
+        </button>
+      </div>
+    </right>
+  </comparison>
+  <aside class="notes">One condition powers both the CSS visuals and aria string so everything stays in sync.</aside>
+</section>

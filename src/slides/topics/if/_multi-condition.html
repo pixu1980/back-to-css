@@ -1,0 +1,80 @@
+<section data-topic="branching" data-menu-title="Multi-condition">
+  <h4>Chain <mark>if()</mark> for multi step logic</h4>
+  <small balance>Combine conditions to create tiers: charging, warmup, and jump ready. The CSS stays declarative, yet the logic rivals a small reducer.</small>
+</section>
+<section data-topic="branching" data-menu-title="Multi-condition">
+  <comparison>
+    <left>
+      <article class="code-stack">
+        <pre>
+          <code data-trim data-line-numbers class="hljs css">
+          @property --flux-phase {
+            syntax: '&lt;integer&gt;';
+            inherits: false;
+            initial-value: 0;
+          }
+
+          .flux-panel {
+            --flux-phase: if(attr(data-speed number, 0) >= 88, 2,
+              if(attr(data-speed number, 0) >= 60, 1, 0)
+            );
+          }
+
+          .flux-panel .status {
+            color: if(var(--flux-phase) = 2, #00f5ff,
+              if(var(--flux-phase) = 1, #ff9500, #9ba0c4)
+            );
+          }
+        </code></pre>
+      </article>
+    </left>
+    <right>
+      <small>
+        <article class="demo-panel flux-panel" id="demo-if-multicondition" data-era="future" data-speed="40" data-energy="0.6" style="--flux-speed: 40; --flux-energy: 0.6">
+          <header>
+            <span>Phase tiers</span>
+            <output data-live-value-target="#demo-if-multicondition" data-live-value="data-speed" data-live-format="mph"></output>
+          </header>
+          <div class="flux-radial" data-label="tiers"></div>
+          <p class="status">Phase color comes from chained <code>if()</code>.</p>
+        </article>
+      </small>
+      <div class="control-row">
+        <button
+          type="button"
+          data-attr-target="#demo-if-multicondition"
+          data-attr-name="data-speed"
+          data-attr-value="40"
+          data-attr-style-var="--flux-speed"
+          data-attr-group="if-multi"
+          aria-pressed="true"
+        >
+          Charging
+        </button>
+        <button
+          type="button"
+          data-attr-target="#demo-if-multicondition"
+          data-attr-name="data-speed"
+          data-attr-value="70"
+          data-attr-style-var="--flux-speed"
+          data-attr-group="if-multi"
+          aria-pressed="false"
+        >
+          Warmup
+        </button>
+        <button
+          type="button"
+          data-attr-target="#demo-if-multicondition"
+          data-attr-name="data-speed"
+          data-attr-value="88"
+          data-attr-style-var="--flux-speed"
+          data-attr-group="if-multi"
+          aria-pressed="false"
+        >
+          Jump ready
+        </button>
+      </div>
+    </right>
+  </comparison>
+  <aside class="notes">Nested <code>if()</code> still reads declaratively, so refactors stay approachable.</aside>
+</section>

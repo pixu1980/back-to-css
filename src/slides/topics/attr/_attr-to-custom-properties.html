@@ -1,0 +1,66 @@
+<section data-topic="foundations" data-menu-title="Attr to custom properties">
+  <h4>Bridge attributes to <mark>custom properties</mark></h4>
+  <small balance
+    >Inline attributes can hydrate design tokens on the fly. Mirror the value into a custom property so legacy browsers can keep rendering while modern engines pick it up with typed
+    <code>attr()</code>.</small
+  >
+</section>
+<section data-topic="foundations" data-menu-title="Attr to custom properties">
+  <comparison>
+    <left>
+      <article class="code-stack">
+        <pre>
+          <code data-trim data-line-numbers class="hljs css">
+          .flux-panel {
+            --flux-speed: attr(data-speed number, var(--flux-speed, 0));
+            --flux-energy: attr(data-energy number, var(--flux-energy, 1));
+          }
+        </code></pre>
+        <pre>
+          <code data-trim data-line-numbers class="hljs html">
+          &lt;div
+            class="flux-panel"
+            data-speed="72"
+            data-energy="1.21"
+            style="--flux-speed:72; --flux-energy:1.21;"&gt;
+          &lt;/div&gt;
+        </code></pre>
+      </article>
+    </left>
+    <right>
+      <small>
+        <article class="demo-panel flux-panel" id="demo-attr-bridge" data-era="future" data-speed="72" data-energy="1.21" style="--flux-speed: 72; --flux-energy: 1.21">
+          <header>
+            <span>Bridge output</span>
+            <output data-live-value-target="#demo-attr-bridge" data-live-value="data-speed" data-live-format="mph"></output>
+          </header>
+          <div class="flux-radial" data-label="bridge"></div>
+          <div class="flux-readings">
+            <dl>
+              <dt>Energy</dt>
+              <dd>
+                <output data-live-value-target="#demo-attr-bridge" data-live-value="data-energy" data-live-format="gw"></output>
+              </dd>
+            </dl>
+            <dl>
+              <dt>Era</dt>
+              <dd>
+                <output data-live-value-target="#demo-attr-bridge" data-live-value="data-era"></output>
+              </dd>
+            </dl>
+          </div>
+          <p class="status">Fallback custom properties keep the paint predictable.</p>
+        </article>
+      </small>
+      <div class="control-row">
+        <label>
+          Energy
+          <input type="range" min="0.5" max="1.5" step="0.01" value="1.21" data-attr-slider-target="#demo-attr-bridge" data-attr-name="data-energy" data-attr-style-var="--flux-energy" />
+        </label>
+        <button type="button" data-attr-target="#demo-attr-bridge" data-attr-name="data-era" data-attr-value="future" data-attr-group="era-demo-3" aria-pressed="true">Future</button>
+        <button type="button" data-attr-target="#demo-attr-bridge" data-attr-name="data-era" data-attr-value="past" data-attr-group="era-demo-3" aria-pressed="false">Past</button>
+      </div>
+    </right>
+  </comparison>
+  <aside class="notes">Show how custom properties mirror the same attribute values for browsers that cannot evaluate typed <code>attr()</code> yet.</aside>
+</section>

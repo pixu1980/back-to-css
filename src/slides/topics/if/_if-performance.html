@@ -1,0 +1,70 @@
+<section data-topic="branching" data-menu-title="if() performance">
+  <h4>Performance profile of <mark>if()</mark></h4>
+  <small balance><code>if()</code> resolves at computed value time, so it's free at runtime. Browsers skip the branches that don't apply, meaning zero cost for unused conditions.</small>
+</section>
+<section data-topic="branching" data-menu-title="if() performance">
+  <comparison>
+    <left>
+      <article class="code-stack">
+        <pre>
+          <code data-trim data-line-numbers class="hljs css">
+          @property --is-critical {
+            syntax: '&lt;integer&gt;';
+            inherits: false;
+            initial-value: 0;
+          }
+
+          .flux-panel {
+            --is-critical: if(attr(data-speed number, 0) >= 88, 1, 0);
+            box-shadow: 0 0 calc(15px + var(--is-critical) * 20px)
+              rgba(255, 0, 153, 0.4);
+          }
+
+          .flux-panel .status {
+            opacity: if(var(--is-critical) = 1, 1, 0.65);
+          }
+        </code></pre>
+      </article>
+    </left>
+    <right>
+      <small>
+        <article class="demo-panel flux-panel" id="demo-if-perf" data-era="future" data-speed="88" data-energy="1.21" style="--flux-speed: 88; --flux-energy: 1.21">
+          <header>
+            <span>Memoized check</span>
+            <output data-live-value-target="#demo-if-performance" data-live-value="data-speed" data-live-format="mph"></output>
+          </header>
+          <div class="flux-radial" data-label="memo"></div>
+          <p class="status">Demo: zero reflows when conditions change.</p>
+        </article>
+      </small>
+      <div class="control-row">
+        <button
+          type="button"
+          data-attr-target="#demo-if-performance"
+          data-attr-name="data-speed"
+          data-attr-value="70"
+          data-attr-style-var="--flux-speed"
+          data-attr-group="if-perf"
+          aria-pressed="false"
+        >
+          Cruise
+        </button>
+        <button
+          type="button"
+          data-attr-target="#demo-if-performance"
+          data-attr-name="data-speed"
+          data-attr-value="88"
+          data-attr-style-var="--flux-speed"
+          data-attr-group="if-perf"
+          aria-pressed="false"
+        >
+          Jump
+        </button>
+        <button type="button" data-attr-target="#demo-if-performance" data-attr-name="data-speed" data-attr-value="78" data-attr-style-var="--flux-speed" data-attr-group="if-perf" aria-pressed="true">
+          Warmup
+        </button>
+      </div>
+    </right>
+  </comparison>
+  <aside class="notes">Store the result in <code>--is-critical</code> so additional properties reuse it without recomputing.</aside>
+</section>

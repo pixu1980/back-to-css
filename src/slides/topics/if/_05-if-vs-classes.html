@@ -1,0 +1,42 @@
+<!-- Slide 5: if() vs traditional approaches -->
+<section data-topic="branching" data-menu-title="if() vs classes">
+  <h3><mark>if()</mark> vs Traditional CSS</h3>
+  <small balance>Fewer selectors, cleaner code, reactive behavior.</small>
+</section>
+<section data-topic="branching" data-menu-title="if() vs classes">
+  <h4>Before: class based switching</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    .button { background: gray; }
+    .button.is-primary { background: blue; }
+    .button.is-danger { background: red; }
+    .button.is-success { background: green; }
+    .button.is-warning { background: orange; }
+    .button.is-disabled { opacity: 0.5; }
+    .button.is-loading { pointer-events: none; }
+    </code>
+  </pre>
+  <small>7 selectors, class management in JS, easy to get out of sync.</small>
+</section>
+<section data-topic="branching" data-menu-title="if() approach">
+  <h4>After: attribute driven with if()</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    .button {
+      --variant: attr(data-variant token, default);
+      --disabled: attr(data-disabled token, false);
+      --loading: attr(data-loading token, false);
+
+      background: if(var(--variant) = primary, blue,
+                  if(var(--variant) = danger, red,
+                  if(var(--variant) = success, green,
+                  if(var(--variant) = warning, orange,
+                     gray))));
+
+      opacity: if(var(--disabled) = true, 0.5, 1);
+      pointer-events: if(var(--loading) = true, none, auto);
+    }
+    </code>
+  </pre>
+  <small>1 selector, all logic in CSS, always in sync with HTML state.</small>
+</section>

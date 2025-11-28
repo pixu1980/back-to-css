@@ -1,0 +1,53 @@
+<!-- Slide 2: Comparison operators -->
+<section data-topic="branching" data-menu-title="Comparisons">
+  <h3>Comparison <mark>Operators</mark></h3>
+  <small balance>Compare numbers, lengths, or match tokens.</small>
+</section>
+<section data-topic="branching" data-menu-title="Comparisons">
+  <h4>Numeric comparisons</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* Equality */
+    if(var(--count) = 0, 'empty', 'has items')
+
+    /* Greater than */
+    if(var(--speed) > 88, green, orange)
+
+    /* Greater or equal */
+    if(var(--level) >= 100, 'max', 'growing')
+
+    /* Less than */
+    if(var(--battery) < 20, red, inherit)
+
+    /* Less or equal */
+    if(var(--temp) <= 0, blue, inherit)
+    </code>
+  </pre>
+</section>
+<section data-topic="branching" data-menu-title="Token matching">
+  <h4>Token matching</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* Match exact token */
+    background: if(
+      attr(data-theme token) = dark,
+      #1a1a2e,
+      #ffffff
+    );
+
+    /* Match status */
+    border-color: if(
+      attr(data-status token) = error,
+      red,
+      transparent
+    );
+
+    /* Match mode */
+    animation: if(
+      attr(data-mode token) = active,
+      pulse 1s infinite,
+      none
+    );
+    </code>
+  </pre>
+</section>

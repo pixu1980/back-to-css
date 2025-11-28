@@ -1,2 +1,11 @@
 @import 'npm:@pixu-talks/fonts';
 @import 'npm:@pixu-talks/theme';
+
+@import './fonts/digital-numbers/digital-numbers.css';
+@import './fonts/michroma/michroma.css';
+@import './fonts/back-to-the-future/back-to-the-future.css';
+
+@import './_back-to-the-future-doodle.css';
+@import './_time-circuits.css';
+@import './_btf-inputs.css';
+@import './_flux-capacitor.css';

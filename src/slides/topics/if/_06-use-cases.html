@@ -1,0 +1,72 @@
+<!-- Slide 6: if() use cases -->
+<section data-topic="branching" data-menu-title="Use cases">
+  <h3>Powerful <mark>Use Cases</mark></h3>
+  <small balance>From theming to animations, if() handles it all.</small>
+</section>
+<section data-topic="branching" data-menu-title="Theming">
+  <h4>Dynamic theming</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    :root {
+      --theme: attr(data-theme token, light);
+
+      --bg: if(var(--theme) = dark, #0a0a0f, #ffffff);
+      --fg: if(var(--theme) = dark, #f0f0f0, #1a1a1a);
+      --accent: if(var(--theme) = dark, #00f5ff, #0066cc);
+      --surface: if(var(--theme) = dark, #1a1a2e, #f5f5f5);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+    }
+    </code>
+  </pre>
+</section>
+<section data-topic="branching" data-menu-title="Responsive values">
+  <h4>Responsive breakpoint values</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    .grid {
+      --cols: attr(data-cols number, 1);
+
+      /* Clamp columns based on container */
+      grid-template-columns: repeat(
+        if(var(--cols) > 4, 4, var(--cols)),
+        1fr
+      );
+
+      /* Adjust gap */
+      gap: if(var(--cols) >= 3, 2rem, 1rem);
+    }
+    </code>
+  </pre>
+</section>
+<section data-topic="branching" data-menu-title="Animation control">
+  <h4>Animation control</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    .notification {
+      --priority: attr(data-priority token, normal);
+
+      animation-name: if(
+        var(--priority) = urgent,
+        pulse-urgent,
+        fade-in
+      );
+
+      animation-duration: if(
+        var(--priority) = urgent,
+        0.3s,
+        0.6s
+      );
+
+      animation-iteration-count: if(
+        var(--priority) = urgent,
+        3,
+        1
+      );
+    }
+    </code>
+  </pre>
+</section>

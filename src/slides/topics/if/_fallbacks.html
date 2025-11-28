@@ -1,0 +1,43 @@
+<section data-topic="branching" data-menu-title="Fallbacks">
+  <h4>Plan <mark>fallbacks</mark> for if()</h4>
+  <small balance>Wrap experimental logic with <code>@supports</code> so legacy browsers still render. The HTML attributes stay the same; only the CSS expression switches.</small>
+</section>
+<section data-topic="branching" data-menu-title="Fallbacks">
+  <comparison>
+    <left>
+      <article class="code-stack">
+        <pre>
+          <code data-trim data-line-numbers class="hljs css">
+          @supports (opacity: if(1 > 0, 1, 0)) {
+            .flux-panel {
+              opacity: if(attr(data-era token) = past, 0.85, 1);
+            }
+          }
+
+          @supports not (opacity: if(1 > 0, 1, 0)) {
+            .flux-panel[data-era='past'] {
+              opacity: 0.85;
+            }
+          }
+        </code></pre>
+      </article>
+    </left>
+    <right>
+      <small>
+        <article class="demo-panel flux-panel" id="demo-fallback" data-era="past" data-speed="40" data-energy="0.7" style="--flux-speed: 40; --flux-energy: 0.7">
+          <header>
+            <span>Fallback path</span>
+            <output data-live-value-target="#demo-if-fallback" data-live-value="data-era"></output>
+          </header>
+          <div class="flux-radial" data-label="fallback"></div>
+          <p class="status">Feature queries decide whether to use if() or selectors.</p>
+        </article>
+      </small>
+      <div class="control-row">
+        <button type="button" data-attr-target="#demo-if-fallback" data-attr-name="data-era" data-attr-value="past" data-attr-group="if-fallback" aria-pressed="false">Past</button>
+        <button type="button" data-attr-target="#demo-if-fallback" data-attr-name="data-era" data-attr-value="future" data-attr-group="if-fallback" aria-pressed="true">Future</button>
+      </div>
+    </right>
+  </comparison>
+  <aside class="notes">Bring the same attribute contract to fallback selectors so there is no branching in HTML.</aside>
+</section>

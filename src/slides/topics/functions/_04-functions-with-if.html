@@ -1,0 +1,68 @@
+<!-- Slide 4: Functions with if() -->
+<section data-topic="functions" data-menu-title="Functions + if()">
+  <h3><mark>@function</mark> meets <mark>if()</mark></h3>
+  <small balance>Add conditional logic inside your functions.</small>
+</section>
+<section data-topic="functions" data-menu-title="Conditional returns">
+  <h4>Conditional returns</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* Color based on value threshold */
+    @function status-color($value) {
+      @return if($value >= 80, #00ff88,
+              if($value >= 50, #ffaa00,
+                 #ff4444));
+    }
+
+    .meter {
+      --value: attr(data-value number, 0);
+      background: status-color(var(--value));
+    }
+    </code>
+  </pre>
+</section>
+<section data-topic="functions" data-menu-title="Mode switching">
+  <h4>Mode based calculations</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* Spacing that adapts to density */
+    @function adaptive-space($base, $density) {
+      @return if($density = compact, calc($base * 0.5),
+              if($density = comfortable, $base,
+                 calc($base * 1.5)));
+    }
+
+    .list {
+      --density: attr(data-density token, normal);
+      gap: adaptive-space(1rem, var(--density));
+    }
+    </code>
+  </pre>
+  <pre>
+    <code data-trim data-line-numbers class="hljs html">
+    &lt;ul class="list" data-density="compact"&gt;...&lt;/ul&gt;
+    &lt;ul class="list" data-density="comfortable"&gt;...&lt;/ul&gt;
+    </code>
+  </pre>
+</section>
+<section data-topic="functions" data-menu-title="Toggle functions">
+  <h4>Toggle helpers</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* Boolean to value converter */
+    @function when-true($condition, $value, $fallback: initial) {
+      @return if($condition = true, $value, $fallback);
+    }
+
+    @function when-false($condition, $value, $fallback: initial) {
+      @return if($condition = false, $value, $fallback);
+    }
+
+    .button {
+      --loading: attr(data-loading token, false);
+      pointer-events: when-true(var(--loading), none, auto);
+      opacity: when-true(var(--loading), 0.6, 1);
+    }
+    </code>
+  </pre>
+</section>

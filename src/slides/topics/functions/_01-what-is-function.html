@@ -1,0 +1,24 @@
+<!-- Slide 1: What is @function -->
+<section data-topic="functions" data-menu-title="What is @function">
+  <h3>What is <mark>@function</mark>?</h3>
+  <small balance>Define reusable calculations with parameters and return values.</small>
+</section>
+<section data-topic="functions" data-menu-title="What is @function">
+  <h4>The basic syntax</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    @function function-name($param1, $param2: default) {
+      @return /* computed value */;
+    }
+    </code>
+  </pre>
+  <dl class="syntax-breakdown">
+    <dt><code>@function</code></dt>
+    <dd>Declares a new CSS function</dd>
+    <dt><code>$param</code></dt>
+    <dd>Parameters with optional defaults</dd>
+    <dt><code>@return</code></dt>
+    <dd>The value the function produces</dd>
+  </dl>
+  <small balance> Like Sass functions, but native to CSS. No build step required. </small>
+</section>

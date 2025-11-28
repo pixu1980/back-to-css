@@ -1,0 +1,73 @@
+<!-- Slide 3: Math inside functions -->
+<section data-topic="functions" data-menu-title="Math in functions">
+  <h3>Math Inside <mark>Functions</mark></h3>
+  <small balance>Combine calc(), clamp(), min(), max() for powerful calculations.</small>
+</section>
+<section data-topic="functions" data-menu-title="Calc chains">
+  <h4>Calculation chains</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* Convert pixels to rem */
+    @function px-to-rem($px, $base: 16) {
+      @return calc($px / $base * 1rem);
+    }
+
+    /* Percentage of a value */
+    @function percent-of($value, $percent) {
+      @return calc($value * $percent / 100);
+    }
+
+    .element {
+      font-size: px-to-rem(18);       /* 1.125rem */
+      width: percent-of(400px, 75);   /* 300px */
+    }
+    </code>
+  </pre>
+</section>
+<section data-topic="functions" data-menu-title="Clamped values">
+  <h4>Bounded values</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* Glow that scales but stays reasonable */
+    @function glow-size($energy, $base: 8px) {
+      @return clamp(4px, calc($energy * $base), 48px);
+    }
+
+    /* Grid columns with limits */
+    @function grid-cols($count, $min: 1, $max: 6) {
+      @return clamp($min, $count, $max);
+    }
+
+    .panel {
+      box-shadow: 0 0 glow-size(1.5) cyan;
+    }
+
+    .grid {
+      grid-template-columns: repeat(grid-cols(8), 1fr);
+      /* Results in 6 columns (clamped) */
+    }
+    </code>
+  </pre>
+</section>
+<section data-topic="functions" data-menu-title="Trigonometry">
+  <h4>Trigonometric calculations</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* Position on a circle */
+    @function circle-x($angle, $radius) {
+      @return calc(cos($angle) * $radius);
+    }
+
+    @function circle-y($angle, $radius) {
+      @return calc(sin($angle) * $radius);
+    }
+
+    .orbit-item {
+      --angle: attr(data-angle deg, 0deg);
+      --x: circle-x(var(--angle), 100px);
+      --y: circle-y(var(--angle), 100px);
+      translate: var(--x) var(--y);
+    }
+    </code>
+  </pre>
+</section>

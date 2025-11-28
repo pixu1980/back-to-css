@@ -1,0 +1,76 @@
+<!-- Slide 5: Composing functions -->
+<section data-topic="functions" data-menu-title="Composing">
+  <h3>Composing <mark>Functions</mark></h3>
+  <small balance>Functions can call other functions. Build complex logic from simple parts.</small>
+</section>
+<section data-topic="functions" data-menu-title="Function chains">
+  <h4>Chaining functions</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* Base conversion */
+    @function to-rem($px) {
+      @return calc($px / 16 * 1rem);
+    }
+
+    /* Fluid sizing using to-rem */
+    @function fluid-text($min-px, $max-px) {
+      @return clamp(
+        to-rem($min-px),
+        calc(1rem + 2vw),
+        to-rem($max-px)
+      );
+    }
+
+    h1 { font-size: fluid-text(24, 48); }
+    h2 { font-size: fluid-text(20, 36); }
+    p  { font-size: fluid-text(16, 20); }
+    </code>
+  </pre>
+</section>
+<section data-topic="functions" data-menu-title="Building systems">
+  <h4>Building design systems</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* Base spacing unit */
+    @function space($n: 1) {
+      @return calc($n * 0.25rem);
+    }
+
+    /* Semantic spacing */
+    @function gap-sm() { @return space(2); }   /* 0.5rem */
+    @function gap-md() { @return space(4); }   /* 1rem */
+    @function gap-lg() { @return space(8); }   /* 2rem */
+    @function gap-xl() { @return space(16); }  /* 4rem */
+
+    /* Usage */
+    .card {
+      padding: gap-md();
+      margin-bottom: gap-lg();
+    }
+
+    .stack {
+      gap: gap-sm();
+    }
+    </code>
+  </pre>
+</section>
+<section data-topic="functions" data-menu-title="Real world example">
+  <h4>Real world: shadow system</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    @function shadow-color($alpha: 0.1) {
+      @return rgba(0, 0, 0, $alpha);
+    }
+
+    @function shadow($elevation: 1) {
+      @return
+        0 calc($elevation * 1px) calc($elevation * 2px) shadow-color(0.1),
+        0 calc($elevation * 2px) calc($elevation * 4px) shadow-color(0.05);
+    }
+
+    .card { box-shadow: shadow(2); }
+    .modal { box-shadow: shadow(8); }
+    .dropdown { box-shadow: shadow(4); }
+    </code>
+  </pre>
+</section>

@@ -1,0 +1,56 @@
+<!-- Slide 4: attr() in calculations -->
+<section data-topic="foundations" data-menu-title="attr() in calc()">
+  <h3><mark>attr()</mark> in Calculations</h3>
+  <small balance>Typed values unlock mathematical operations directly in CSS.</small>
+</section>
+<section data-topic="foundations" data-menu-title="attr() in calc()">
+  <h4>Dynamic sizing</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs html">
+    &lt;div class="progress" data-value="75"&gt;&lt;/div&gt;
+    </code>
+  </pre>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    .progress {
+      --value: attr(data-value number, 0);
+
+      /* Use in calc() */
+      width: calc(var(--value) * 1%);
+
+      /* Combine with clamp() */
+      opacity: clamp(0.3, var(--value) / 100, 1);
+
+      /* Build complex expressions */
+      background: linear-gradient(
+        90deg,
+        #00f5ff calc(var(--value) * 1%),
+        transparent calc(var(--value) * 1%)
+      );
+    }
+    </code>
+  </pre>
+</section>
+<section data-topic="foundations" data-menu-title="Trigonometry">
+  <h4>Trigonometric functions</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs html">
+    &lt;div class="dial" data-angle="45"&gt;&lt;/div&gt;
+    </code>
+  </pre>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    .dial {
+      --angle: attr(data-angle deg, 0deg);
+
+      /* Rotation */
+      rotate: var(--angle);
+
+      /* Position on a circle */
+      --x: calc(cos(var(--angle)) * 50px);
+      --y: calc(sin(var(--angle)) * 50px);
+      translate: var(--x) var(--y);
+    }
+    </code>
+  </pre>
+</section>

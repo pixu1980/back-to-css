@@ -1,0 +1,63 @@
+<!-- Slide 5: HTML as state layer -->
+<section data-topic="foundations" data-menu-title="HTML as state">
+  <h3>HTML as the <mark>State Layer</mark></h3>
+  <small balance>Attributes become your single source of truth. CSS reads, never writes.</small>
+</section>
+<section data-topic="foundations" data-menu-title="HTML as state">
+  <h4>The attribute bus pattern</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs html">
+    &lt;!-- All state lives in HTML --&gt;
+    &lt;article
+      class="dashboard"
+      data-speed="88"
+      data-energy="1.21"
+      data-era="future"
+      data-status="ready"&gt;
+      ...
+    &lt;/article&gt;
+    </code>
+  </pre>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+    /* CSS reads state, applies logic */
+    .dashboard {
+      --speed: attr(data-speed number, 0);
+      --energy: attr(data-energy number, 0);
+      --is-future: attr(data-era token) = future;
+      --is-ready: attr(data-status token) = ready;
+    }
+    </code>
+  </pre>
+</section>
+<section data-topic="foundations" data-menu-title="No side channels">
+  <h4>No side channel classes</h4>
+  <comparison>
+    <left>
+      <h5>Before: class juggling</h5>
+      <pre>
+        <code data-trim data-line-numbers class="hljs html">
+        &lt;div class="card
+          speed-88
+          energy-high
+          theme-dark
+          status-active"&gt;
+        </code>
+      </pre>
+      <small>Classes encode state but get messy fast.</small>
+    </left>
+    <right>
+      <h5>After: clean attributes</h5>
+      <pre>
+        <code data-trim data-line-numbers class="hljs html">
+        &lt;div class="card"
+          data-speed="88"
+          data-energy="1.21"
+          data-theme="dark"
+          data-status="active"&gt;
+        </code>
+      </pre>
+      <small>Attributes are semantic and typed.</small>
+    </right>
+  </comparison>
+</section>

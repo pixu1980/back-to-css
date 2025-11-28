@@ -1,0 +1,50 @@
+<section data-topic="functions" data-menu-title="Flux glow">
+  <h4>Animating glow with @function</h4>
+  <small balance>A small helper converts attribute driven gigawatt readings into glow radius so every widget pulses in sync.</small>
+</section>
+<section data-topic="functions" data-menu-title="Flux glow">
+  <comparison>
+    <left>
+      <article class="code-stack">
+        <pre>
+          <code data-trim data-line-numbers class="hljs css">
+          @function flux-glow($energy) {
+            @return clamp(0px, $energy * 18px, 80px);
+          }
+
+          .flux-panel {
+            box-shadow: 0 0 flux-glow(attr(data-energy number, 1.21))
+              color-mix(in hsl, var(--btf-teal) 60%, transparent);
+          }
+        </code></pre>
+        <p>The logic lives once. Other panels only set <code>data-energy</code> or override the helper if they need a different curve.</p>
+      </article>
+    </left>
+    <right>
+      <small>
+        <article class="demo-panel flux-panel" id="demo-function-glow" data-energy="1.21" data-speed="67" data-era="past">
+          <div class="flux-radial" data-label="glow"></div>
+          <div class="flux-readings">
+            <dl>
+              <dt>Energy</dt>
+              <dd>
+                <output data-live-value-target="#demo-function-glow" data-live-value="data-energy" data-live-format="gw"></output>
+              </dd>
+            </dl>
+            <dl>
+              <dt>Glow</dt>
+              <dd><code>flux-glow()</code></dd>
+            </dl>
+          </div>
+          <p class="status">Glow strength adapts instantly when energy attribute changes.</p>
+        </article>
+      </small>
+      <div class="control-row">
+        <button type="button" data-attr-target="#demo-function-glow" data-attr-name="data-energy" data-attr-value="0.4" data-attr-group="function-glow" aria-pressed="false">Calm</button>
+        <button type="button" data-attr-target="#demo-function-glow" data-attr-name="data-energy" data-attr-value="1.21" data-attr-group="function-glow" aria-pressed="true">Nominal</button>
+        <button type="button" data-attr-target="#demo-function-glow" data-attr-name="data-energy" data-attr-value="3.1" data-attr-group="function-glow" aria-pressed="false">Overload</button>
+      </div>
+    </right>
+  </comparison>
+  <aside class="notes">Baseline: @function is future facing, wrap in @supports and provide static fallbacks.</aside>
+</section>

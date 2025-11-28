@@ -1,0 +1,70 @@
+<section data-topic="functions" data-menu-title="Functions + if">
+  <h4>Mix <mark>@function</mark> with <mark>if()</mark></h4>
+  <small balance>Helpers can branch internally so components consume a single value. The function owns the conditional complexity and the component simply calls it.</small>
+</section>
+<section data-topic="functions" data-menu-title="Functions + if">
+  <comparison>
+    <left>
+      <article class="code-stack">
+        <pre>
+          <code data-trim data-line-numbers class="hljs css">
+          @function flux-phase($speed) {
+            @return if($speed >= 88, 'jump', if($speed >= 60, 'warmup', 'charge'));
+          }
+
+          .flux-panel {
+            --phase: flux-phase(attr(data-speed number, 0));
+          }
+        </code></pre>
+      </article>
+    </left>
+    <right>
+      <small>
+        <article class="demo-panel flux-panel" id="demo-function-if" data-era="future" data-speed="50" data-energy="0.8" style="--flux-speed: 50; --flux-energy: 0.8">
+          <header>
+            <span>Single call</span>
+            <output data-live-value-target="#demo-function-if" data-live-value="data-speed" data-live-format="mph"></output>
+          </header>
+          <div class="flux-radial" data-label="phase"></div>
+          <p class="status">Function hides the branching details.</p>
+        </article>
+      </small>
+      <div class="control-row">
+        <button
+          type="button"
+          data-attr-target="#demo-function-if"
+          data-attr-name="data-speed"
+          data-attr-value="50"
+          data-attr-style-var="--flux-speed"
+          data-attr-group="function-if"
+          aria-pressed="true"
+        >
+          Charge
+        </button>
+        <button
+          type="button"
+          data-attr-target="#demo-function-if"
+          data-attr-name="data-speed"
+          data-attr-value="70"
+          data-attr-style-var="--flux-speed"
+          data-attr-group="function-if"
+          aria-pressed="false"
+        >
+          Warmup
+        </button>
+        <button
+          type="button"
+          data-attr-target="#demo-function-if"
+          data-attr-name="data-speed"
+          data-attr-value="88"
+          data-attr-style-var="--flux-speed"
+          data-attr-group="function-if"
+          aria-pressed="false"
+        >
+          Jump
+        </button>
+      </div>
+    </right>
+  </comparison>
+  <aside class="notes">Functions own the branching; the calling component just reads <code>--phase</code>.</aside>
+</section>

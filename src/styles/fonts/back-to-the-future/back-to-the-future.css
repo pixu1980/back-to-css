@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Back to the Future';
+  src:
+    url('back-to-the-future.woff2') format('woff2'),
+    url('back-to-the-future.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
