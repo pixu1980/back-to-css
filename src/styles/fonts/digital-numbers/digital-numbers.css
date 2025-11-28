@@ -4,5 +4,5 @@
   font-weight: 400;
   src:
     local('Digital Numbers'),
-    url('./digital-numbers.woff') format('woff');
+    url('digital-numbers.woff') format('woff');
 }
