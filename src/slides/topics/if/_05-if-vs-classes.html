@@ -16,7 +16,7 @@
     .button.is-loading { pointer-events: none; }
     </code>
   </pre>
-  <small>7 selectors, class management in JS, easy to get out of sync.</small>
+  <small balance>7 selectors, class management in JS, easy to get out of sync.</small>
 </section>
 <section data-topic="branching" data-menu-title="if() approach">
   <h4>After: attribute driven with if()</h4>
@@ -27,16 +27,25 @@
       --disabled: attr(data-disabled token, false);
       --loading: attr(data-loading token, false);
 
-      background: if(var(--variant) = primary, blue,
-                  if(var(--variant) = danger, red,
-                  if(var(--variant) = success, green,
-                  if(var(--variant) = warning, orange,
-                     gray))));
+      background: if(
+        var(--variant) = primary: blue;
+        var(--variant) = danger: red;
+        var(--variant) = success: green;
+        var(--variant) = warning: orange;
+        else: gray
+      );
 
-      opacity: if(var(--disabled) = true, 0.5, 1);
-      pointer-events: if(var(--loading) = true, none, auto);
+      opacity: if(
+        var(--disabled) = true: 0.5;
+        else: 1
+      );
+      
+      pointer-events: if(
+        var(--loading) = true: none;
+        else: auto
+      );
     }
     </code>
   </pre>
-  <small>1 selector, all logic in CSS, always in sync with HTML state.</small>
+  <small balance>1 selector, all logic in CSS, always in sync with HTML state.</small>
 </section>

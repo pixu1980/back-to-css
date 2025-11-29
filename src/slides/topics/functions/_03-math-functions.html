@@ -8,13 +8,13 @@
   <pre>
     <code data-trim data-line-numbers class="hljs css">
     /* Convert pixels to rem */
-    @function px-to-rem($px, $base: 16) {
-      @return calc($px / $base * 1rem);
+    @function px-to-rem(--px, --base: 16) {
+      @return calc(var(--px) / var(--base) * 1rem);
     }
 
     /* Percentage of a value */
-    @function percent-of($value, $percent) {
-      @return calc($value * $percent / 100);
+    @function percent-of(--value, --percent) {
+      @return calc(var(--value) * var(--percent) / 100);
     }
 
     .element {
@@ -29,13 +29,13 @@
   <pre>
     <code data-trim data-line-numbers class="hljs css">
     /* Glow that scales but stays reasonable */
-    @function glow-size($energy, $base: 8px) {
+    @function glow-size(--energy, --base: 8px) {
       @return clamp(4px, calc($energy * $base), 48px);
     }
 
     /* Grid columns with limits */
-    @function grid-cols($count, $min: 1, $max: 6) {
-      @return clamp($min, $count, $max);
+    @function grid-cols(--count, --min: 1, --max: 6) {
+      @return clamp(var(--min), var(--count), var(--max));
     }
 
     .panel {
@@ -54,12 +54,12 @@
   <pre>
     <code data-trim data-line-numbers class="hljs css">
     /* Position on a circle */
-    @function circle-x($angle, $radius) {
-      @return calc(cos($angle) * $radius);
+    @function circle-x(--angle, --radius) {
+      @return calc(cos(var(--angle)) * var(--radius));
     }
 
-    @function circle-y($angle, $radius) {
-      @return calc(sin($angle) * $radius);
+    @function circle-y(--angle, --radius) {
+      @return calc(sin(var(--angle)) * var(--radius));
     }
 
     .orbit-item {

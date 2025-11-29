@@ -7,21 +7,23 @@
     <left>
       <article class="code-stack">
         <pre>
-        <code data-trim data-line-numbers class="hljs js">
-        const channel = new BroadcastChannel('timeline');
+          <code data-trim data-line-numbers class="hljs js">
+            const channel = new BroadcastChannel('timeline');
 
-        channel.onmessage = ({ data }) => {
-          document.querySelectorAll('[data-sync="timeline"]').forEach((node) => {
-            node.setAttribute('data-stop', data.stop);
-          });
-        };
-      </code></pre>
+            channel.onmessage = ({ data }) => {
+              document.querySelectorAll('[data-sync="timeline"]').forEach((node) => {
+                node.setAttribute('data-stop', data.stop);
+              });
+            };
+          </code>
+        </pre>
         <pre>
-        <code data-trim data-line-numbers class="hljs css">
-        [data-sync='timeline'] .timeline-marker {
-          transform: translateX(timeline-offset(attr(data-stop number)));
-        }
-      </code></pre>
+          <code data-trim data-line-numbers class="hljs css">
+            [data-sync='timeline'] .timeline-marker {
+              transform: translateX(timeline-offset(attr(data-stop number)));
+            }
+          </code>
+        </pre>
       </article>
     </left>
     <right>

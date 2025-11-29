@@ -132,12 +132,30 @@ Every technical slide must include:
 
 When adding slides:
 
-1. Create the slide partial under `src/slides/<section>/` with `_name.html` naming.
+1. Create the slide partial under `src/slides/<section>/` with `_XX-name.html` naming.
 2. Include it in `src/slides/topics/topics.html` (or relevant section file).
 3. Add any CSS/JS assets, import them from `src/styles/index.css` or `src/scripts/index.js`.
 4. Add demos/media to `src/assets/` and reference relatively.
 5. Update README with new sections or instructions if necessary.
 6. Run format commands before committing.
+
+### File Numbering Convention
+
+- `_01` to `_06`: Theory slides (one concept per slide)
+- `_07` to `_97`: Additional topic slides
+- `_98`: In depth patterns (consolidated practical demos)
+- `_99`: Demo hub (interactive playground)
+
+### Current Slide Structure
+
+```
+src/slides/topics/
+├── attr/           # Typed attr() foundations
+├── if/             # Native if() branching
+├── functions/      # Reusable @function logic
+├── systems/        # Attribute driven UI systems
+└── case-studies/   # Temporal themed demos
+```
 
 ## Accessibility & QA Checklist
 
@@ -146,6 +164,17 @@ When adding slides:
 - Announce state changes (e.g., visually hidden text describing current era).
 - Test on latest Chrome, Firefox, Safari; document gaps for experimental CSS.
 - For features behind flags, wrap styles in `@supports` and explain fallbacks in slide notes.
+
+## Coding Styleguides
+
+Detailed coding standards and patterns are documented in `.github/coding-styleguides/`:
+
+- **[css.md](./coding-styleguides/css.md)** - CSS patterns: @layer, nesting, :where/:is, typed attr(), if(), @function, container queries
+- **[html.md](./coding-styleguides/html.md)** - HTML standards: data attributes as state, custom elements, slide structure
+- **[javascript.md](./coding-styleguides/javascript.md)** - JS patterns: event delegation, attribute syncing, minimal JS philosophy
+- **[a11y.md](./coding-styleguides/a11y.md)** - Accessibility: keyboard navigation, ARIA, reduced motion, contrast
+
+Always consult these styleguides when adding or modifying code.
 
 ## Reference Sources
 

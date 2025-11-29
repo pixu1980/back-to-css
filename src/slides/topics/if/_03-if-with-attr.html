@@ -15,24 +15,21 @@
     button {
       /* Disable pointer when loading */
       pointer-events: if(
-        attr(data-loading token) = true,
-        none,
-        auto
+        attr(data-loading token) = true: none;
+        else: auto;
       );
 
       /* Show spinner or text */
       opacity: if(
-        attr(data-loading token) = true,
-        0.6,
-        1
+        attr(data-loading token) = true: 0.6;
+        else: 1;
       );
     }
 
     button::after {
       content: if(
-        attr(data-loading token) = true,
-        'Loading...',
-        ''
+        attr(data-loading token) = true: 'Loading...';
+        else: ''
       );
     }
     </code>
@@ -51,9 +48,13 @@
       --value: attr(data-value number, 0);
 
       /* Color by threshold */
-      --color: if(var(--value) >= 80, #00ff88,
-               if(var(--value) >= 50, #ffaa00,
-                  #ff4444));
+      --color: if(
+        var(--value) >= 80: #00ff88;
+        else: if(
+          var(--value) >= 50: #ffaa00,
+          else: #ff4444
+        )
+      );
 
       background: var(--color);
     }

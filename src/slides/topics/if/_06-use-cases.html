@@ -10,10 +10,25 @@
     :root {
       --theme: attr(data-theme token, light);
 
-      --bg: if(var(--theme) = dark, #0a0a0f, #ffffff);
-      --fg: if(var(--theme) = dark, #f0f0f0, #1a1a1a);
-      --accent: if(var(--theme) = dark, #00f5ff, #0066cc);
-      --surface: if(var(--theme) = dark, #1a1a2e, #f5f5f5);
+      --bg: if(
+        var(--theme) = dark: #0a0a0f;
+        else: #ffffff
+      );
+      
+      --fg: if(
+        var(--theme) = dark: #f0f0f0;
+        else: #1a1a1a
+      );
+      
+      --accent: if(
+        var(--theme) = dark: #00f5ff;
+        else: #0066cc
+      );
+      
+      --surface: if(
+        var(--theme) = dark: #1a1a2e;
+        else: #f9f9f9
+      );
     }
 
     body {
@@ -32,12 +47,19 @@
 
       /* Clamp columns based on container */
       grid-template-columns: repeat(
-        if(var(--cols) > 4, 4, var(--cols)),
+        if(
+          var(--cols) > 4: 4;
+          var(--cols) < 1: 1;
+          else: var(--cols)
+        ),
         1fr
       );
 
       /* Adjust gap */
-      gap: if(var(--cols) >= 3, 2rem, 1rem);
+      gap: if(
+        var(--cols) >= 3: 2rem;
+        else: 1rem
+      );
     }
     </code>
   </pre>
@@ -50,21 +72,18 @@
       --priority: attr(data-priority token, normal);
 
       animation-name: if(
-        var(--priority) = urgent,
-        pulse-urgent,
-        fade-in
+        var(--priority) = urgent: pulse-urgent;
+        else: fade-in
       );
 
       animation-duration: if(
-        var(--priority) = urgent,
-        0.3s,
-        0.6s
+        var(--priority) = urgent: 0.3s;
+        else: 0.6s
       );
 
       animation-iteration-count: if(
-        var(--priority) = urgent,
-        3,
-        1
+        var(--priority) = urgent: 3;
+        else: 1
       );
     }
     </code>

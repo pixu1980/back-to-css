@@ -8,16 +8,16 @@
   <pre>
     <code data-trim data-line-numbers class="hljs css">
     /* Lighten/darken with oklch */
-    @function lighten($color, $amount) {
-      @return oklch(from $color calc(l + $amount) c h);
+    @function lighten(--color, --amount) {
+      @return oklch(from var(--color) calc(l + var(--amount)) c h);
     }
 
-    @function darken($color, $amount) {
-      @return oklch(from $color calc(l - $amount) c h);
+    @function darken(--color, --amount) {
+      @return oklch(from var(--color) calc(l - var(--amount)) c h);
     }
 
-    @function alpha($color, $opacity) {
-      @return oklch(from $color l c h / $opacity);
+    @function alpha(--color, --opacity) {
+      @return oklch(from var(--color) l c h / var(--opacity));
     }
 
     .button {
@@ -40,8 +40,8 @@
   <pre>
     <code data-trim data-line-numbers class="hljs css">
     /* Stagger delay based on index */
-    @function stagger($index, $base: 50ms) {
-      @return calc($index * $base);
+    @function stagger(--index, --base: 50ms) {
+      @return calc(var(--index) * var(--base));
     }
 
     /* Easing curves */
@@ -62,13 +62,13 @@
   <pre>
     <code data-trim data-line-numbers class="hljs css">
     /* Container width with max */
-    @function container($max: 1200px, $padding: 1rem) {
-      @return min(calc(100% - $padding * 2), $max);
+    @function container(--max: 1200px, --padding: 1rem) {
+      @return min(calc(100% - var(--padding) * 2), var(--max));
     }
 
     /* Aspect ratio box height */
-    @function aspect-height($width, $ratio) {
-      @return calc($width / $ratio);
+    @function aspect-height(--width, --ratio) {
+      @return calc(var(--width) / var(--ratio));
     }
 
     .wrapper {

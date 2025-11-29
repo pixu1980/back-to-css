@@ -8,8 +8,8 @@
   <pre>
     <code data-trim data-line-numbers class="hljs css">
     /* Simple function with one param */
-    @function double($value) {
-      @return calc($value * 2);
+    @function double(--value) {
+      @return calc(var(--value) * 2);
     }
 
     .box {
@@ -24,8 +24,8 @@
   <pre>
     <code data-trim data-line-numbers class="hljs css">
     /* Spacing function with defaults */
-    @function space($multiplier: 1, $base: 0.5rem) {
-      @return calc($multiplier * $base);
+    @function space(--multiplier: 1, --base: 0.5rem) {
+      @return calc(var(--multiplier) * var(--base));
     }
 
     .card {
@@ -41,8 +41,8 @@
   <pre>
     <code data-trim data-line-numbers class="hljs css">
     /* Fluid sizing with min, preferred, max */
-    @function fluid($min, $preferred, $max) {
-      @return clamp($min, $preferred, $max);
+    @function fluid(--min, --preferred, --max) {
+      @return clamp(var(--min), var(--preferred), var(--max));
     }
 
     h1 {

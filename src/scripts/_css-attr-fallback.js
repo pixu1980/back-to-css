@@ -22,8 +22,8 @@ function isAdvancedAttrSupported() {
 if (!isAdvancedAttrSupported()) {
 	const fretBoards = document.querySelectorAll("fret-board");
 	fretBoards.forEach((fret) => {
-		fret.style.setProperty("--_strings", fret.getAttribute("strings"));
-		fret.style.setProperty("--_frets", fret.getAttribute("frets"));
+		fret.style.setProperty("--fb--strings", fret.getAttribute("strings"));
+		fret.style.setProperty("--fb--frets", fret.getAttribute("frets"));
 		const stringNotes = fret.querySelectorAll("string-note");
 		stringNotes.forEach((note) => {
 			note.style.setProperty("--string", note.getAttribute("string") || 1);

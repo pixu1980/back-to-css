@@ -1,8 +1,7 @@
-@import "https://fonts.googleapis.com/css?family=Six+Caps";
 @layer pixu-talks.typography.fira-code {
   @font-face {
     font-family: Fira Code;
-    src: local(Fira Code Light), local(FiraCode-Light), url("FiraCode-200.d271e23c.woff2") format("woff2"), url("FiraCode-200.edb44050.woff") format("woff");
+    src: local(Fira Code Light), local(FiraCode-Light), url("FiraCode-200.0979ba40.woff2") format("woff2"), url("FiraCode-200.40a6c1d2.woff") format("woff");
     font-weight: 200;
     font-style: normal;
     font-display: block;
@@ -10,7 +9,7 @@
 
   @font-face {
     font-family: Fira Code;
-    src: local(Fira Code Regular), local(FiraCode-Regular), url("FiraCode-400.93c2f4ba.woff2") format("woff2"), url("FiraCode-400.bd25199b.woff") format("woff");
+    src: local(Fira Code Regular), local(FiraCode-Regular), url("FiraCode-400.c07636ac.woff2") format("woff2"), url("FiraCode-400.136276ba.woff") format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: block;
@@ -18,7 +17,7 @@
 
   @font-face {
     font-family: Fira Code;
-    src: local(Fira Code Medium), local(FiraCode-Medium), url("FiraCode-500.47b55cf7.woff2") format("woff2"), url("FiraCode-500.684e42c0.woff") format("woff");
+    src: local(Fira Code Medium), local(FiraCode-Medium), url("FiraCode-500.b02cecef.woff2") format("woff2"), url("FiraCode-500.1de1ab0b.woff") format("woff");
     font-weight: 500;
     font-style: normal;
     font-display: block;
@@ -26,7 +25,7 @@
 
   @font-face {
     font-family: Fira Code;
-    src: local(Fira Code Bold), local(FiraCode-Bold), url("FiraCode-700.cd642f8d.woff2") format("woff2"), url("FiraCode-700.c1a47beb.woff") format("woff");
+    src: local(Fira Code Bold), local(FiraCode-Bold), url("FiraCode-700.ee62a364.woff2") format("woff2"), url("FiraCode-700.a9e61bdf.woff") format("woff");
     font-weight: 700;
     font-style: normal;
     font-display: block;
@@ -34,7 +33,7 @@
 
   @font-face {
     font-family: Fira Code Retina;
-    src: local(Fira Code Retina), local(FiraCode-Retina), url("FiraCode-Retina.6d51efea.woff2") format("woff2"), url("FiraCode-Retina.f9268e62.woff") format("woff");
+    src: local(Fira Code Retina), local(FiraCode-Retina), url("FiraCode-Retina.2be35569.woff2") format("woff2"), url("FiraCode-Retina.c766790a.woff") format("woff");
     font-weight: 900;
     font-style: normal;
     font-display: block;
@@ -42,7 +41,7 @@
 
   @font-face {
     font-family: Fira Code Monospace;
-    src: local(Fira Code Retina), local(FiraCode-Retina), url("FiraCode-Retina.6d51efea.woff2") format("woff2"), url("FiraCode-Retina.f9268e62.woff") format("woff");
+    src: local(Fira Code Retina), local(FiraCode-Retina), url("FiraCode-Retina.2be35569.woff2") format("woff2"), url("FiraCode-Retina.c766790a.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     unicode-range: U+30-39, U+20A3-20A7, U+2C, U+2E;
@@ -50,7 +49,7 @@
 
   @font-face {
     font-family: Fira Code Monospace Full;
-    src: local(Fira Code Retina), local(FiraCode-Retina), url("FiraCode-Retina.6d51efea.woff2") format("woff2"), url("FiraCode-Retina.f9268e62.woff") format("woff");
+    src: local(Fira Code Retina), local(FiraCode-Retina), url("FiraCode-Retina.2be35569.woff2") format("woff2"), url("FiraCode-Retina.c766790a.woff") format("woff");
     font-weight: normal;
     font-style: normal;
   }
@@ -59,7 +58,7 @@
 @layer pixu-talks.typography.rec-vf {
   @font-face {
     font-family: RecVF;
-    src: url("RecVF.df9dfec5.woff2") format("woff2 supports variations"), url("RecVF.df9dfec5.woff2") format("woff2-variations");
+    src: url("RecVF.e71349f6.woff2") format("woff2 supports variations"), url("RecVF.e71349f6.woff2") format("woff2-variations");
     font-weight: 300 1000;
     font-style: oblique 0deg 14deg;
     font-display: block;
@@ -144,7 +143,7 @@
 @layer pixu-talks.iconography.draft-ui-icons {
   @font-face {
     font-family: draft-ui-icons;
-    src: url("draft-ui-icons.5e8d8ef4.ttf") format("truetype"), url("draft-ui-icons.8e796c31.woff") format("woff"), url("draft-ui-icons.ea233a28.svg#draft-ui-icons") format("svg");
+    src: url("draft-ui-icons.171ad3c7.ttf") format("truetype"), url("draft-ui-icons.f35d360b.woff") format("woff"), url("draft-ui-icons.a2bd967c.svg#draft-ui-icons") format("svg");
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -490,7 +489,7 @@
 @layer pixu-talks.iconography.space-icons {
   @font-face {
     font-family: space-icons;
-    src: url("space-icons.c4c28f62.ttf") format("truetype"), url("space-icons.876baca3.woff") format("woff"), url("space-icons.465a2f7b.svg#space-icons") format("svg");
+    src: url("space-icons.9578aaab.ttf") format("truetype"), url("space-icons.e5497c7a.woff") format("woff"), url("space-icons.f9432e71.svg#space-icons") format("svg");
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -11102,7 +11101,7 @@
 @layer pixu-talks.iconography.anicons {
   @font-face {
     font-family: anicons;
-    src: url("anicons.4dd218c8.woff2") format("woff2 supports variations"), url("anicons.4dd218c8.woff2") format("woff2-variations");
+    src: url("anicons.44b7a8d8.woff2") format("woff2 supports variations"), url("anicons.44b7a8d8.woff2") format("woff2-variations");
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -11110,7 +11109,7 @@
 
   @font-face {
     font-family: anicons-color;
-    src: url("anicons-color.3fd0ff9a.woff2") format("woff2 supports variations"), url("anicons-color.3fd0ff9a.woff2") format("woff2-variations");
+    src: url("anicons-color.7eebbc7e.woff2") format("woff2 supports variations"), url("anicons-color.7eebbc7e.woff2") format("woff2-variations");
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -13549,32 +13548,32 @@
 
   @font-face {
     font-family: Source Sans Pro;
-    src: url("source-sans-pro-regular.f09df2e4.eot");
-    src: url("source-sans-pro-regular.f09df2e4.eot#iefix") format("embedded-opentype"), url("source-sans-pro-regular.4d4039a4.woff") format("woff"), url("source-sans-pro-regular.5c3f07d3.ttf") format("truetype");
+    src: url("source-sans-pro-regular.f807c4bc.eot");
+    src: url("source-sans-pro-regular.f807c4bc.eot#iefix") format("embedded-opentype"), url("source-sans-pro-regular.2a33e8ee.woff") format("woff"), url("source-sans-pro-regular.eb1661d5.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
     font-family: Source Sans Pro;
-    src: url("source-sans-pro-italic.5ad8beb8.eot");
-    src: url("source-sans-pro-italic.5ad8beb8.eot#iefix") format("embedded-opentype"), url("source-sans-pro-italic.0669b0f6.woff") format("woff"), url("source-sans-pro-italic.c56faa80.ttf") format("truetype");
+    src: url("source-sans-pro-italic.c2b11051.eot");
+    src: url("source-sans-pro-italic.c2b11051.eot#iefix") format("embedded-opentype"), url("source-sans-pro-italic.216ff6af.woff") format("woff"), url("source-sans-pro-italic.afc37291.ttf") format("truetype");
     font-weight: normal;
     font-style: italic;
   }
 
   @font-face {
     font-family: Source Sans Pro;
-    src: url("source-sans-pro-semibold.8487c82c.eot");
-    src: url("source-sans-pro-semibold.8487c82c.eot#iefix") format("embedded-opentype"), url("source-sans-pro-semibold.bf60eda2.woff") format("woff"), url("source-sans-pro-semibold.ee4934fb.ttf") format("truetype");
+    src: url("source-sans-pro-semibold.785790c9.eot");
+    src: url("source-sans-pro-semibold.785790c9.eot#iefix") format("embedded-opentype"), url("source-sans-pro-semibold.0321aef0.woff") format("woff"), url("source-sans-pro-semibold.dc40d109.ttf") format("truetype");
     font-weight: 600;
     font-style: normal;
   }
 
   @font-face {
     font-family: Source Sans Pro;
-    src: url("source-sans-pro-semibolditalic.11cebf76.eot");
-    src: url("source-sans-pro-semibolditalic.11cebf76.eot#iefix") format("embedded-opentype"), url("source-sans-pro-semibolditalic.429fffb5.woff") format("woff"), url("source-sans-pro-semibolditalic.95aeed3b.ttf") format("truetype");
+    src: url("source-sans-pro-semibolditalic.a1c84ec2.eot");
+    src: url("source-sans-pro-semibolditalic.a1c84ec2.eot#iefix") format("embedded-opentype"), url("source-sans-pro-semibolditalic.697490d2.woff") format("woff"), url("source-sans-pro-semibolditalic.a7834247.ttf") format("truetype");
     font-weight: 600;
     font-style: italic;
   }
@@ -15244,7 +15243,7 @@
   font-family: Digital Numbers;
   font-style: normal;
   font-weight: 400;
-  src: local(Digital Numbers), url("digital-numbers.6202719d.woff") format("woff");
+  src: local(Digital Numbers), url("digital-numbers.8cb45243.woff") format("woff");
 }
 
 @font-face {
@@ -15252,7 +15251,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("michroma.6c8c630e.woff2") format("woff2");
+  src: url("michroma.9fb79deb.woff2") format("woff2");
   unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
@@ -15261,13 +15260,21 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("michroma-numbers.323fa249.woff2") format("woff2");
+  src: url("michroma-numbers.7bd16d6d.woff2") format("woff2");
   unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
   font-family: Back to the Future;
-  src: url("back-to-the-future.9ecd930d.woff2") format("woff2"), url("back-to-the-future.737b9715.woff") format("woff");
+  src: url("back-to-the-future.5e33e1d2.woff2") format("woff2"), url("back-to-the-future.1f8f9f14.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Six Caps;
+  src: url("six-caps.27f28b29.woff2") format("woff2"), url("six-caps.4c132c3b.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -16611,4 +16618,252 @@
     }
   }
 }
-/*# sourceMappingURL=back-to-css.ebeadb08.css.map */
+
+@layer fretboard {
+  fret-board-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    display: grid;
+  }
+
+  fret-board {
+    --fret-board-bg: light-dark(#eee, #333);
+    --fret-board-fret-c: light-dark(#000, #fff);
+    --fret-board-fret-w: clamp(.0625rem, .03125rem + .5cqi, .5rem);
+    --fret-board-string-c: light-dark(#0008, #fff8);
+    --fret-board-string-w: clamp(.0625rem, .03125rem + .5cqi, .125rem);
+    --fb--frets: attr(frets number, 4);
+    --fb--strings: attr(strings number, 6);
+    aspect-ratio: 1;
+    background-color: var(--fret-board-bg);
+    border-radius: var(--fret-board-bdrs, .5rem);
+    box-sizing: border-box;
+    font-family: var(--fret-board-ff, inherit);
+    grid-template-columns: repeat(calc(var(--fb--strings) * 2), 1fr);
+    grid-template-rows: var(--fret-board-top-row-h, 12%) repeat(calc(var(--fb--frets)), 1fr) var(--fret-board-bottom-row-h, 15%);
+    place-items: center;
+    display: grid;
+    container-type: inline-size;
+
+    &:before {
+      background-color: var(--fret-board-fret-bg, #0000);
+      background-image: linear-gradient(90deg, var(--fret-board-string-c) var(--fret-board-string-w), #0000 0 var(--fret-board-string-w)), linear-gradient(180deg, var(--fret-board-fret-c) var(--fret-board-fret-w), #0000 0 var(--fret-board-fret-w));
+      background-position: 0 var(--fret-board-fret-w), 0 0;
+      background-repeat: repeat-x, repeat-y;
+      background-size: calc(100% / (var(--fb--strings)  - 1)  - (var(--fret-board-string-w) / var(--fb--strings))) calc(100% - (2 * var(--fret-board-fret-w))), 100% calc(100% / var(--fb--frets)  - (var(--fret-board-fret-w) / var(--fb--frets)));
+      box-shadow: 0 calc(0px - var(--fret-board-fret-bbsw, 1.5cqi)) 0 0 var(--fret-board-fret-c);
+      content: "";
+      grid-area: 2 / 2 / calc(var(--fb--frets)  + 2) / calc(var(--fb--strings) * 2);
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    &:after {
+      color: var(--fret-board-chord-c, light-dark(#222, #fff));
+      content: attr(chord);
+      font-size: var(--fret-board-chord-fs, 7.5cqi);
+      font-weight: var(--fret-board-chord-fw, 500);
+      grid-column: 2 / span calc((var(--fb--strings) * 2)  - 2);
+      grid-row: calc(var(--fb--frets)  + 2);
+      text-align: center;
+      width: 100%;
+    }
+
+    & ol {
+      font-size: var(--fret-board-fret-number-fs, 5cqi);
+      font-weight: var(--fret-board-fret-number-fw, 400);
+      grid-column: 1;
+      grid-row: 2 / span var(--fb--frets);
+      grid-template-rows: repeat(var(--fb--frets), 1fr);
+      align-items: center;
+      height: 100%;
+      padding: 0;
+      list-style-position: inside;
+      display: grid;
+    }
+  }
+
+  string-note {
+    --string-note-h: 12cqi;
+    --string-note-open-mute-h: 5cqi;
+    --barre: attr(barre number, 1);
+    --fret: attr(fret number, 0);
+    --string: attr(string number, 0);
+    aspect-ratio: 1;
+    background-color: var(--string-note-bg, currentColor);
+    box-sizing: border-box;
+    grid-column: calc((var(--fb--strings) * 2)  - (var(--string) * 2 - 1)) / span calc(var(--barre) * 2);
+    grid-row: calc(var(--fret)  + 1);
+    height: var(--string-note-h);
+    isolation: isolate;
+    border-radius: 50%;
+    place-content: center;
+    list-style: none;
+    display: grid;
+
+    &:after {
+      color: var(--string-note-c, light-dark(#fff, #222));
+      content: attr(finger);
+      font-size: var(--string-note-fs, 7cqi);
+      font-weight: var(--string-note-fw, 500);
+      text-box: cap alphabetic;
+    }
+
+    &[barre] {
+      aspect-ratio: unset;
+      border-radius: var(--string-note-h);
+      opacity: var(--string-note-barre-o, .6);
+      width: 100%;
+    }
+
+    &[mute], &[open] {
+      background-color: var(--string-note-mute-open-c, light-dark(#222, #fff));
+      height: var(--string-note-open-mute-h);
+      width: var(--string-note-open-mute-h);
+    }
+
+    &[mute] {
+      border-image: conic-gradient(var(--fret-board-bg) 0 0) 50% / calc(50% - .25cqi);
+      rotate: 45deg;
+    }
+
+    &[open] {
+      border-radius: 50%;
+      mask: radial-gradient(circle farthest-side, #0000 calc(100% - 1cqi), #000 calc(100% - 1cqi + 1px));
+    }
+  }
+
+  [theme="blue"] {
+    --fret-board-bg: #00bcd4;
+    --fret-board-chord-c: #065863;
+    --fret-board-fret-bg: #009eb3;
+    --fret-board-fret-c: #1a4a50;
+    --fret-board-string-c: #f0f0f0;
+    --string-note-bg: #1a4a50;
+    --string-note-c: #fff;
+    --string-note-mute-open-c: #065863;
+  }
+
+  [theme="green"] {
+    --fret-board-bg: #4caf50;
+    --fret-board-chord-c: #1b5e20;
+    --fret-board-fret-bg: #388e3c;
+    --fret-board-fret-c: #1c4a1e;
+    --fret-board-string-c: #f0f0f0;
+    --string-note-bg: #1c4a1e;
+    --string-note-c: #fff;
+    --string-note-mute-open-c: #1b5e20;
+  }
+
+  [theme="red"] {
+    --fret-board-bg: #e57373;
+    --fret-board-chord-c: #7f0000;
+    --fret-board-fret-bg: #bf4040;
+    --fret-board-fret-c: #962c2c;
+    --fret-board-string-c: #f0f0f0;
+    --string-note-bg: #6a1616;
+    --string-note-c: #fff;
+    --string-note-mute-open-c: #7f0000;
+  }
+
+  [theme="purple"] {
+    --fret-board-bg: #9575cd;
+    --fret-board-chord-c: #eeeafa;
+    --fret-board-fret-bg: #7e57c2;
+    --fret-board-fret-c: #3f2376;
+    --fret-board-string-c: #f0f0f0;
+    --string-note-bg: #3f2376;
+    --string-note-c: #fff;
+    --string-note-mute-open-c: #eeeafa;
+  }
+
+  [theme="orange"] {
+    --fret-board-bg: #f6b655;
+    --fret-board-chord-c: #4e2c05;
+    --fret-board-fret-bg: #f2960d;
+    --fret-board-fret-c: #5c320a;
+    --fret-board-string-c: #f0f0f0;
+    --string-note-bg: #5c320a;
+    --string-note-c: #fff;
+    --string-note-mute-open-c: #4e2c05;
+  }
+
+  [theme="teal"] {
+    --fret-board-bg: #00897b;
+    --fret-board-chord-c: #e0f2f1;
+    --fret-board-fret-bg: #12a190;
+    --fret-board-fret-c: #004d40;
+    --fret-board-string-c: #f0f0f0;
+    --string-note-bg: #004d40;
+    --string-note-c: #fff;
+    --string-note-mute-open-c: #e0f2f1;
+  }
+
+  [theme="gold"] {
+    --fret-board-bg: #ffd54f;
+    --fret-board-chord-c: #533f03;
+    --fret-board-fret-bg: #f7d56e;
+    --fret-board-fret-c: #533f03;
+    --fret-board-string-c: #533f03;
+    --string-note-bg: #54450b;
+    --string-note-c: #fff;
+    --string-note-mute-open-c: #533f03;
+  }
+
+  [theme="brown"] {
+    --fret-board-bg: #8d6e63;
+    --fret-board-chord-c: #efebe9;
+    --fret-board-fret-bg: #997466;
+    --fret-board-fret-c: #4e342e;
+    --fret-board-string-c: #f0f0f0;
+    --string-note-bg: #4e342e;
+    --string-note-c: #fff;
+    --string-note-mute-open-c: #efebe9;
+  }
+
+  [theme="rose"] {
+    --fret-board-bg: #e57373;
+    --fret-board-chord-c: #ffebee;
+    --fret-board-fret-bg: #ef9a9a;
+    --fret-board-fret-c: #c62828;
+    --fret-board-string-c: #ffebee;
+    --string-note-bg: #c62828;
+    --string-note-c: #ffebee;
+    --string-note-mute-open-c: #ffebee;
+  }
+
+  [theme="amber"] {
+    --fret-board-bg: #ffb74d;
+    --fret-board-chord-c: #4e342e;
+    --fret-board-fret-bg: #ffcc80;
+    --fret-board-fret-c: #e65100;
+    --fret-board-string-c: #e65100;
+    --string-note-bg: #e65100;
+    --string-note-c: #fff3e0;
+    --string-note-mute-open-c: #4e342e;
+  }
+
+  [theme="mint"] {
+    --fret-board-bg: #81c784;
+    --fret-board-chord-c: #1b5e20;
+    --fret-board-fret-bg: #a5d6a7;
+    --fret-board-fret-c: #1b5e20;
+    --fret-board-string-c: #e8f5e9;
+    --string-note-bg: #2e7d32;
+    --string-note-c: #e8f5e9;
+    --string-note-mute-open-c: #1b5e20;
+  }
+
+  [theme="slate"] {
+    --fret-board-bg: #78909c;
+    --fret-board-chord-c: #eceff1;
+    --fret-board-fret-bg: #90a4ae;
+    --fret-board-fret-c: #263238;
+    --fret-board-string-c: #eceff1;
+    --string-note-bg: #455a64;
+    --string-note-c: #eceff1;
+    --string-note-mute-open-c: #eceff1;
+  }
+}
+/*# sourceMappingURL=back-to-css.d2c046dd.css.map */

@@ -1,5 +1,7 @@
 import "@pixu-talks/core";
 
+import "./_css-attr-fallback.js";
+
 import "./baseline-status/baseline-status.js";
 import "./_time-circuits.js";
 

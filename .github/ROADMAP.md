@@ -7,150 +7,200 @@
 - **Core APIs:** typed `attr()`, native `if()`, CSS `@function`
 - **Goal:** Prove HTML can remain the single source of truth while CSS delivers branching logic and reusable math utilities
 
-## Section Breakdown and Slide Inventory
+## Current Slide Structure
+
+All slide files follow a numbered convention: `_XX-name.html`. Theory slides use `_01` through `_06`, in depth patterns use `_98`, and demo hubs use `_99`.
+
+```
+src/slides/
+├── intro/
+│   ├── _pixu.html
+│   ├── _main-topic.html
+│   └── _doodle.html
+├── summary/
+│   ├── _topics.html
+│   └── _dive-in.html
+├── outro/
+│   ├── _wrap-up.html
+│   ├── _thanks.html
+│   ├── _links.html
+│   └── _taf.html
+└── topics/
+    ├── attr/
+    │   ├── _01-what-is-attr.html
+    │   ├── _02-typed-syntax.html
+    │   ├── _03-supported-types.html
+    │   ├── _04-attr-in-calc.html
+    │   ├── _05-html-as-state.html
+    │   ├── _06-attr-to-vars.html
+    │   ├── _98-attr-in-depth.html
+    │   └── _99-attr-demo-hub.html
+    ├── if/
+    │   ├── _01-what-is-if.html
+    │   ├── _02-comparisons.html
+    │   ├── _03-if-with-attr.html
+    │   ├── _04-nested-if.html
+    │   ├── _05-if-vs-classes.html
+    │   ├── _06-use-cases.html
+    │   ├── _98-if-in-depth.html
+    │   └── _99-if-demo-hub.html
+    ├── functions/
+    │   ├── _01-what-is-function.html
+    │   ├── _02-parameters.html
+    │   ├── _03-math-functions.html
+    │   ├── _04-functions-with-if.html
+    │   ├── _05-composing.html
+    │   ├── _06-use-cases.html
+    │   ├── _98-functions-in-depth.html
+    │   └── _99-function-demo-hub.html
+    ├── systems/
+    │   ├── _01-component-contracts.html
+    │   ├── _02-theme-engine.html
+    │   ├── _03-multi-element-sync.html
+    │   ├── _04-timeline-controls.html
+    │   ├── _05-js-sync.html
+    │   ├── _06-forms-and-attr.html
+    │   ├── _07-dashboard-layout.html
+    │   ├── _08-token-pipeline.html
+    │   ├── _09-system-accessibility.html
+    │   └── _99-systems-demo-hub.html
+    └── case-studies/
+        ├── _01-case-flux-capacitor.html
+        ├── _02-case-flux-dashboard.html
+        ├── _03-case-88mph.html
+        ├── _04-case-past-future.html
+        ├── _05-case-device-hand-off.html
+        ├── _06-case-fretboard.html
+        └── _99-case-lessons.html
+```
+
+## Section Breakdown
 
 ### 1. Intro (Slides 1-3)
 
-| Slide | File                                | Working title      | Focus                                 |
-| ----- | ----------------------------------- | ------------------ | ------------------------------------- |
-| 1     | `src/slides/intro/_pixu.html`       | Speaker intro      | Personal story, why HTML equals state |
-| 2     | `src/slides/intro/_main-topic.html` | Back to CSS mantra | High level promise, movie references  |
-| 3     | `src/slides/intro/_doodle.html`     | Time tunnel teaser | Visual hook, shows attribute toggles  |
+| Slide | File                                | Status      | Focus                                 |
+| ----- | ----------------------------------- | ----------- | ------------------------------------- |
+| 1     | `src/slides/intro/_pixu.html`       | ✅ Complete | Personal story, why HTML equals state |
+| 2     | `src/slides/intro/_main-topic.html` | ✅ Complete | High level promise, movie references  |
+| 3     | `src/slides/intro/_doodle.html`     | ✅ Complete | Visual hook, shows attribute toggles  |
 
-**Milestones**
+### 2. Foundations: Typed attr() (Slides 4-10)
 
-- **Theory:** Define the mantra “HTML is state, CSS is logic,” outline the typed `attr()` pipeline, and set expectations for zero JS toggles.
-- **Examples:** Present minimal attribute driven toggle snippet plus the base CSS that reacts via custom properties.
-- **Demos:**
-  - Demo A: Intro timeline slider flipping `data-era` between 1985 and 2015.
-  - Demo B: Flux readout card highlighting attribute sourced speed and energy values.
+| Slide | File                                              | Status      | Focus                                   |
+| ----- | ------------------------------------------------- | ----------- | --------------------------------------- |
+| 4     | `src/slides/topics/attr/_01-what-is-attr.html`    | ✅ Complete | What is typed attr and why it matters   |
+| 5     | `src/slides/topics/attr/_02-typed-syntax.html`    | ✅ Complete | Syntax, units, fallbacks                |
+| 6     | `src/slides/topics/attr/_03-supported-types.html` | ✅ Complete | Number, angle, length, token types      |
+| 7     | `src/slides/topics/attr/_04-attr-in-calc.html`    | ✅ Complete | Combine attr output with calc           |
+| 8     | `src/slides/topics/attr/_05-html-as-state.html`   | ✅ Complete | HTML data props as state bus            |
+| 9     | `src/slides/topics/attr/_06-attr-to-vars.html`    | ✅ Complete | Bridge attr values to custom properties |
+| 10    | `src/slides/topics/attr/_98-attr-in-depth.html`   | ✅ Complete | Consolidated practical patterns         |
+| Hub   | `src/slides/topics/attr/_99-attr-demo-hub.html`   | ✅ Complete | Interactive playground                  |
 
-### 2. Foundations (Slides 4-10)
+### 3. Branching with if() (Slides 11-18)
 
-| Slide | File                                                   | Working title                | Focus                                   |
-| ----- | ------------------------------------------------------ | ---------------------------- | --------------------------------------- |
-| 4     | `src/slides/topics/foundations/_typed-attr-recap.html` | Typed attr recap             | Syntax, units, fallbacks                |
-| 5     | `_attribute-bus.html`                                  | HTML data props as state bus | Naming conventions, validation          |
-| 6     | `_attr-to-custom-properties.html`                      | Bridging attr to vars        | Copy attr values into custom properties |
-| 7     | `_unit-safe-calculations.html`                         | Unit safe math               | Combine attr output with calc           |
-| 8     | `_attr-accessibility.html`                             | Semantics and aria           | Mirror state for assistive tech         |
-| 9     | `_attr-debugging.html`                                 | Debug tactics                | DevTools tips, log attributes           |
-| 10    | `_foundations-demo-hub.html`                           | Mini lab                     | Summary of foundational patterns        |
+| Slide | File                                          | Status      | Focus                           |
+| ----- | --------------------------------------------- | ----------- | ------------------------------- |
+| 11    | `src/slides/topics/if/_01-what-is-if.html`    | ✅ Complete | Native if primer, syntax        |
+| 12    | `src/slides/topics/if/_02-comparisons.html`   | ✅ Complete | Comparison operators            |
+| 13    | `src/slides/topics/if/_03-if-with-attr.html`  | ✅ Complete | Combining if with typed attr    |
+| 14    | `src/slides/topics/if/_04-nested-if.html`     | ✅ Complete | Multi condition, nested logic   |
+| 15    | `src/slides/topics/if/_05-if-vs-classes.html` | ✅ Complete | Replacing class toggles with if |
+| 16    | `src/slides/topics/if/_06-use-cases.html`     | ✅ Complete | Practical use cases             |
+| 17    | `src/slides/topics/if/_98-if-in-depth.html`   | ✅ Complete | Consolidated practical patterns |
+| Hub   | `src/slides/topics/if/_99-if-demo-hub.html`   | ✅ Complete | Interactive playground          |
 
-**Milestones**
+### 4. Reusable Logic with @function (Slides 19-26)
 
-- **Theory:** Document typed `attr()` signatures, explain fallback values, and show how attributes map to CSS custom properties.
-- **Examples:** Provide snippet sets for numeric, angle, and token attributes plus `@supports` guards.
-- **Demos:**
-  - Demo A: Flux capacitor gauge where `data-energy` drives glow and vibration.
-  - Demo B: DeLorean dashboard where `data-speed` feeds a speedometer arc through `attr()` and `calc()`.
-
-### 3. Branching with `if()` (Slides 11-18)
-
-| Slide | File                       | Working title              | Focus                                     |
-| ----- | -------------------------- | -------------------------- | ----------------------------------------- |
-| 11    | `_if-intro.html`           | Native if primer           | Syntax, comparison operators              |
-| 12    | `_if-vs-classes.html`      | Replacing class toggles    | Benefits over JS class flips              |
-| 13    | `_multi-condition.html`    | Nested logic               | Compose multiple `if()` statements        |
-| 14    | `_if-range-checks.html`    | Range checks               | Combine `if()` with `clamp()` and `min()` |
-| 15    | `_if-accessibility.html`   | aria-sync logic            | Derive `aria-live` messaging              |
-| 16    | `_if-performance.html`     | Performance considerations | When to memoize values                    |
-| 17    | `_fallbacks.html`          | Progressive enhancement    | Feature queries and safe defaults         |
-| 18    | `_branching-demo-hub.html` | Temporal states demo       | Summary slide                             |
-
-**Milestones**
-
-- **Theory:** Break down the `if()` syntax, truthy comparisons, and how to guard with `@supports` so older browsers see safe styles.
-- **Examples:** Compare `if(attr(data-era token) = future, ...)` with equivalent `.future` class styles to highlight code reduction.
-- **Demos:**
-  - Demo A: Hoverboard picker with `if()` switching neon palettes when `data-era` hits future.
-  - Demo B: Reactor safety card that flips layout and warnings when `data-energy` crosses thresholds.
-
-### 4. Reusable Logic with `@function` (Slides 19-26)
-
-| Slide | File                        | Working title          | Focus                             |
-| ----- | --------------------------- | ---------------------- | --------------------------------- |
-| 19    | `_function-intro.html`      | `@function` basics     | Signature, parameters, return     |
-| 20    | `_function-math-chain.html` | Math chains            | Combine attr math inside helpers  |
-| 21    | `_function-and-if.html`     | Mixing with `if()`     | Conditional returns               |
-| 22    | `_timeline-helpers.html`    | Timeline utilities     | Convert seconds to offsets        |
-| 23    | `_glow-function.html`       | Flux glow helper       | Reusable outputs                  |
-| 24    | `_function-share.html`      | Sharing between slides | Partial imports                   |
-| 25    | `_debugging-functions.html` | Debug strategy         | Use custom properties for tracing |
-| 26    | `_function-demo-hub.html`   | Function playground    | Show interactive knobs            |
-
-**Milestones**
-
-- **Theory:** Describe the current CSSWG proposal status, syntax for defining functions, and best practices for naming and return units.
-- **Examples:** Publish two helper samples (`flux-glow()`, `timeline-offset()`) that show parameter validation and `if()` branching inside the function body.
-- **Demos:**
-  - Demo A: Attribute driven light trail where `@function` computes blur radii per timeline step.
-  - Demo B: Mission clock that converts `data-departure` minutes into dash offsets through a reusable function.
+| Slide | File                                                      | Status      | Focus                           |
+| ----- | --------------------------------------------------------- | ----------- | ------------------------------- |
+| 19    | `src/slides/topics/functions/_01-what-is-function.html`   | ✅ Complete | @function basics                |
+| 20    | `src/slides/topics/functions/_02-parameters.html`         | ✅ Complete | Parameters and arguments        |
+| 21    | `src/slides/topics/functions/_03-math-functions.html`     | ✅ Complete | Math chains inside helpers      |
+| 22    | `src/slides/topics/functions/_04-functions-with-if.html`  | ✅ Complete | Mixing with if                  |
+| 23    | `src/slides/topics/functions/_05-composing.html`          | ✅ Complete | Composing multiple functions    |
+| 24    | `src/slides/topics/functions/_06-use-cases.html`          | ✅ Complete | Practical use cases             |
+| 25    | `src/slides/topics/functions/_98-functions-in-depth.html` | ✅ Complete | Consolidated practical patterns |
+| Hub   | `src/slides/topics/functions/_99-function-demo-hub.html`  | ✅ Complete | Interactive playground          |
 
 ### 5. Attribute Driven UI Systems (Slides 27-36)
 
-| Slide | File                         | Working title               | Focus                               |
-| ----- | ---------------------------- | --------------------------- | ----------------------------------- |
-| 27    | `_component-contracts.html`  | Component prop schema       | Document attribute contracts        |
-| 28    | `_theme-engine.html`         | Attribute themes            | Light vs dark vs neon               |
-| 29    | `_multi-element-sync.html`   | Propagation                 | Parent attributes feeding children  |
-| 30    | `_timeline-controls.html`    | Zero JS toggles             | Buttons flipping `data-era`         |
-| 31    | `_js-sync.html`              | Optional JS helpers         | When to use script for syncing      |
-| 32    | `_forms-and-attr.html`       | Form integration            | Map inputs to attributes            |
-| 33    | `_dashboard-layout.html`     | Layout orchestration        | Grid and attr interplay             |
-| 34    | `_token-pipeline.html`       | Design tokens               | Bridge attr to design system values |
-| 35    | `_system-accessibility.html` | Accessibility and narration | Live regions                        |
-| 36    | `_systems-demo-hub.html`     | System level showcase       | Full dashboard                      |
+| Slide | File                                                      | Status      | Focus                              |
+| ----- | --------------------------------------------------------- | ----------- | ---------------------------------- |
+| 27    | `src/slides/topics/systems/_01-component-contracts.html`  | ✅ Complete | Document attribute contracts       |
+| 28    | `src/slides/topics/systems/_02-theme-engine.html`         | ✅ Complete | Attribute themes                   |
+| 29    | `src/slides/topics/systems/_03-multi-element-sync.html`   | ✅ Complete | Parent attributes feeding children |
+| 30    | `src/slides/topics/systems/_04-timeline-controls.html`    | ✅ Complete | Zero JS toggles                    |
+| 31    | `src/slides/topics/systems/_05-js-sync.html`              | ✅ Complete | Optional JS helpers                |
+| 32    | `src/slides/topics/systems/_06-forms-and-attr.html`       | ✅ Complete | Map inputs to attributes           |
+| 33    | `src/slides/topics/systems/_07-dashboard-layout.html`     | ✅ Complete | Layout orchestration               |
+| 34    | `src/slides/topics/systems/_08-token-pipeline.html`       | ✅ Complete | Design tokens                      |
+| 35    | `src/slides/topics/systems/_09-system-accessibility.html` | ✅ Complete | Live regions                       |
+| Hub   | `src/slides/topics/systems/_99-systems-demo-hub.html`     | ✅ Complete | Full dashboard                     |
 
-**Milestones**
+### 6. Temporal Case Studies (Slides 37-42)
 
-- **Theory:** Define attribute schemas, discuss validation, and explain how cascading attributes feed nested components through custom properties.
-- **Examples:** Provide markup templates for cards, gauges, and buttons where each attribute is annotated with acceptable ranges.
-- **Demos:**
-  - Demo A: Control deck with three widgets sharing the same `data-era`, `data-speed`, and `data-energy` attributes.
-  - Demo B: Attribute driven theme switcher where toggling `data-mode` recolors the entire layout via cascade layers.
+| Slide | File                                                           | Status      | Focus                            |
+| ----- | -------------------------------------------------------------- | ----------- | -------------------------------- |
+| 37    | `src/slides/topics/case-studies/_01-case-flux-capacitor.html`  | ✅ Complete | Flux capacitor component         |
+| 38    | `src/slides/topics/case-studies/_02-case-flux-dashboard.html`  | ✅ Complete | Multi widget overview            |
+| 39    | `src/slides/topics/case-studies/_03-case-88mph.html`           | ✅ Complete | Speed threshold storytelling     |
+| 40    | `src/slides/topics/case-studies/_04-case-past-future.html`     | ✅ Complete | Dual timeline comparison         |
+| 41    | `src/slides/topics/case-studies/_05-case-device-hand-off.html` | ✅ Complete | Attribute updates via JS signals |
+| 42    | `src/slides/topics/case-studies/_06-case-fretboard.html`       | ✅ Complete | Guitar chord diagrams via attr() |
+| Wrap  | `src/slides/topics/case-studies/_99-case-lessons.html`         | ✅ Complete | Lessons learned                  |
 
-### 6. Temporal Case Studies (Slides 37-41)
+### 7. Wrap Up and CTA (Slides 43-46)
 
-| Slide | File                               | Working title        | Focus                            |
-| ----- | ---------------------------------- | -------------------- | -------------------------------- |
-| 37    | `_case-study-flux-dashboard.html`  | Flux dashboard       | Multi widget overview            |
-| 38    | `_case-study-88mph.html`           | 88 mph trigger       | Speed threshold storytelling     |
-| 39    | `_case-study-past-future.html`     | Past vs future skins | Dual timeline comparison         |
-| 40    | `_case-study-device-hand-off.html` | Device sync          | Attribute updates via JS signals |
-| 41    | `_case-study-lessons.html`         | Lessons learned      | Takeaways from case studies      |
+| Slide | File                               | Status      | Focus                          |
+| ----- | ---------------------------------- | ----------- | ------------------------------ |
+| 43    | `src/slides/summary/_topics.html`  | ✅ Complete | Summary of learnings           |
+| 44    | `src/slides/summary/_dive-in.html` | ✅ Complete | Checklist and links            |
+| 45    | `src/slides/outro/_wrap-up.html`   | ✅ Complete | CTA with pros/cons/conclusions |
+| 46    | `src/slides/outro/_thanks.html`    | ✅ Complete | Thanks and QR                  |
 
-**Milestones**
+## Styling Architecture
 
-- **Theory:** Explain how the three APIs combine at scale, including layering logic, timeline narration, and accessibility notes.
-- **Examples:** Provide annotated screenshots or code blocks for each case study, showing which attributes feed which CSS outputs.
-- **Demos:**
-  - Demo A: Interactive timeline stage that animates between past and future scenes solely through attribute tweaks.
-  - Demo B: Safety override scenario where `data-energy` spikes above safe levels and triggers automatic mode shifts.
+### CSS Layers
 
-### 7. Wrap Up and CTA (Slides 42-45)
+The project uses `@layer` for cascade control:
 
-| Slide | File                               | Working title   | Focus                                    |
-| ----- | ---------------------------------- | --------------- | ---------------------------------------- |
-| 42    | `src/slides/summary/_topics.html`  | Recap           | Summary of learnings                     |
-| 43    | `src/slides/summary/_dive-in.html` | Technical recap | Checklist and links                      |
-| 44    | `src/slides/outro/_wrap-up.html`   | CTA             | Invite to build attribute driven systems |
-| 45    | `src/slides/outro/_thanks.html`    | Thanks and QR   | Resources, contact                       |
+- `flux-capacitor` - Flux capacitor component styles
+- `btf-inputs` - Input design system (buttons, ranges, selects, etc.)
+- `time-circuits` - Time circuits display styles
 
-**Milestones**
+### Key CSS Patterns
 
-- **Theory:** Reiterate the benefits of using HTML as state and CSS as logic, plus Baseline readiness for each API.
-- **Examples:** Link to code sandboxes and highlight the minimal JS helpers used.
-- **Demos:**
-  - Demo A: Final deck wide attribute flip that changes the entire scene in one click.
-  - Demo B: QR code triggered attribute preset that sets the experience to either past or future mode during the Q&A.
+1. **Typed attr()** - Reading attribute values with type safety
+2. **CSS Nesting** - Native nesting with `&` for component scoping
+3. **:where()/:is()** - Low specificity selectors for flexible overrides
+4. **Custom Properties** - Design tokens and component state
+5. **@property** - Registered custom properties for animations
+6. **Container Queries** - Component scoped responsive design
+
+### JavaScript Architecture
+
+Minimal JS following the attribute first pattern:
+
+- Event delegation for button clicks
+- Slider/input syncing to data attributes
+- Live output updates via MutationObserver pattern
+- No frameworks, vanilla modules only
 
 ## Execution Checklist
 
-1. Build slides per section using the listed files; keep each slide focused on a single concept.
-2. For every topic, deliver the milestones in order: theory explanation, reference examples, and at least two demos.
-3. Ensure attribute contracts are documented in both slide notes and `README.md`.
-4. Record Baseline status and feature flags in presenter notes for transparency.
-5. Run `pnpm run format:prettier` and `pnpm run format:biome` after editing HTML, CSS, or JS files.
-6. Keep demos accessible: buttons must be keyboard focusable, state changes announced when relevant.
-7. Close each live demo reminding the audience “The UI jumps at 88 mph.”
+1. ✅ Build slides per section using numbered file convention
+2. ✅ Theory explanation, reference examples, and demos for each topic
+3. ✅ Attribute contracts documented in README
+4. ✅ Baseline status noted in slides where relevant
+5. ✅ Format with `pnpm run format` before committing
+6. ✅ Accessible demos: keyboard focusable buttons, aria-pressed states
+7. ✅ Close each demo with "The UI jumps at 88 mph"
+
+## Resources
+
+- [Coding Styleguides](./.github/coding-styleguides/) - Project specific CSS, HTML, JS, and a11y conventions
+- [MDN attr() typed syntax](https://developer.mozilla.org/docs/Web/CSS/attr)
+- [MDN if() CSS function](https://developer.mozilla.org/docs/Web/CSS/if)
+- [CSS @function proposal](https://drafts.csswg.org/css-values-5/#funcdef-function)
+- [Baseline](https://web.dev/baseline)

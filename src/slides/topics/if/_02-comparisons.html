@@ -4,50 +4,61 @@
   <small balance>Compare numbers, lengths, or match tokens.</small>
 </section>
 <section data-topic="branching" data-menu-title="Comparisons">
-  <h4>Numeric comparisons</h4>
+  <h4>Simple comparisons</h4>
   <pre>
     <code data-trim data-line-numbers class="hljs css">
-    /* Equality */
-    if(var(--count) = 0, 'empty', 'has items')
+      /* Single &lt;if&gt; */
+      color: if(style(--scheme: dark): #eeeeee;)
 
-    /* Greater than */
-    if(var(--speed) > 88, green, orange)
+      background-color: if(media(print): black;)
 
-    /* Greater or equal */
-    if(var(--level) >= 100, 'max', 'growing')
+      margin: if(media(width &gt; 700px): 0 auto;)
 
-    /* Less than */
-    if(var(--battery) < 20, red, inherit)
-
-    /* Less or equal */
-    if(var(--temp) <= 0, blue, inherit)
+      color: if(supports(color: lch(7.1% 60.23 300.16)): lch(7.1% 60.23 300.16);)
     </code>
   </pre>
 </section>
-<section data-topic="branching" data-menu-title="Token matching">
-  <h4>Token matching</h4>
+<section data-topic="branching" data-menu-title="Comparisons">
+  <h4>Ternary comparisons</h4>
   <pre>
     <code data-trim data-line-numbers class="hljs css">
-    /* Match exact token */
-    background: if(
-      attr(data-theme token) = dark,
-      #1a1a2e,
-      #ffffff
-    );
 
-    /* Match status */
-    border-color: if(
-      attr(data-status token) = error,
-      red,
-      transparent
-    );
+      /* &lt;if&gt; with else */
+      padding: if(style(--size: "2xl"): 1em; else: 0.25em;)
 
-    /* Match mode */
-    animation: if(
-      attr(data-mode token) = active,
-      pulse 1s infinite,
-      none
-    );
+      color: if(media(print): white; else: black;)
+
+      margin: if(media(width &lt; 700px): 0 auto; else: 20px auto)
+
+      color: if(
+        supports(color: lch(7.1% 60.23 300.16)): lch(7.1% 60.23 300.16);
+        else: #03045e;
+      )
+
+      background-color: if(
+        supports(color: lch(75% 0 0)): 3px solid lch(75% 0 0);
+        else: 3px solid silver;
+      )
+    </code>
+  </pre>
+</section>
+<section data-topic="branching" data-menu-title="Comparisons">
+  <h4>Token/String matching</h4>
+  <pre>
+    <code data-trim data-line-numbers class="hljs css">
+      /* Switch &lt;if&gt;s */
+      background: if(
+        style(--scheme: ice): linear-gradient(#caf0f8, white, #caf0f8);
+        style(--scheme: fire): linear-gradient(#ffc971, white, #ffc971);
+        else: none;
+      )
+
+      /* &lt;if&gt; within a shorthand */
+      border: 3px yellow if(
+        style(--color: green): dashed;
+        style(--color: yellow): inset;
+        else: solid;
+      )
     </code>
   </pre>
 </section>

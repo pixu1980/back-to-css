@@ -1,6 +1,10 @@
 <section>
   <section data-transition="convex">
     <h4>Wrapping up</h4>
+    <small balance
+      >HTML attributes become the state layer. CSS <mark>attr()</mark>, <mark>if()</mark>, and <mark>@function</mark> deliver the logic. Together they form a reactive system that flows through the
+      cascade.</small
+    >
   </section>
   <section data-transition="convex">
     <comparison>
@@ -8,10 +12,12 @@
         <h4>Pros</h4>
         <small>
           <ul>
-            <li class="fragment">pro 1</li>
-            <li class="fragment">pro 2</li>
-            <li class="fragment">pro 3</li>
-            <li class="fragment">pro 4</li>
+            <li class="fragment">Single source of truth in markup</li>
+            <li class="fragment">No runtime JS for state changes</li>
+            <li class="fragment">Debuggable in DevTools Elements panel</li>
+            <li class="fragment">Zero bundle for UI reactivity</li>
+            <li class="fragment">Progressive enhancement by default</li>
+            <li class="fragment">Framework agnostic architecture</li>
           </ul>
         </small>
       </left>
@@ -19,10 +25,12 @@
         <h4>Cons</h4>
         <small>
           <ul>
-            <li class="fragment">con 1</li>
-            <li class="fragment">con 2</li>
-            <li class="fragment">con 3</li>
-            <li class="fragment">con 4</li>
+            <li class="fragment">Browser support still incomplete</li>
+            <li class="fragment">Tooling and linter gaps</li>
+            <li class="fragment">Limited complex logic expressiveness</li>
+            <li class="fragment">Requires <mark>@supports</mark> fallbacks</li>
+            <li class="fragment">Learning curve for teams new to CSS logic</li>
+            <li class="fragment">Potential cascade debugging complexity</li>
           </ul>
         </small>
       </right>
@@ -30,5 +38,10 @@
   </section>
   <section data-transition="convex">
     <h4>Conclusions</h4>
+    <small balance
+      >The leap from JavaScript driven UI to CSS driven UI is already happening. Start small: pick one component, move its state to attributes, and watch the cascade handle the rest. The flux
+      capacitor powers the time machine. Your stylesheets can power the interface.</small
+    >
+    <small><br />The UI jumps at <mark>88 mph</mark>.</small>
   </section>
 </section>

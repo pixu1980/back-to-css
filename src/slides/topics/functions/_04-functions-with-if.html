@@ -8,10 +8,12 @@
   <pre>
     <code data-trim data-line-numbers class="hljs css">
     /* Color based on value threshold */
-    @function status-color($value) {
-      @return if($value >= 80, #00ff88,
-              if($value >= 50, #ffaa00,
-                 #ff4444));
+    @function status-color(--value) {
+      @return if(
+        var(--value) >= 80: #00ff88;
+        var(--value) >= 50: #ffaa00;
+        else: #ff4444
+      );
     }
 
     .meter {
@@ -26,10 +28,12 @@
   <pre>
     <code data-trim data-line-numbers class="hljs css">
     /* Spacing that adapts to density */
-    @function adaptive-space($base, $density) {
-      @return if($density = compact, calc($base * 0.5),
-              if($density = comfortable, $base,
-                 calc($base * 1.5)));
+    @function adaptive-space(--base, --density) {
+      @return if(
+        var(--density) = compact: calc(var(--base) * 0.5);
+        var(--density) = comfortable: var(--base);
+        else: calc(var(--base) * 1.5)
+      );
     }
 
     .list {
@@ -50,12 +54,18 @@
   <pre>
     <code data-trim data-line-numbers class="hljs css">
     /* Boolean to value converter */
-    @function when-true($condition, $value, $fallback: initial) {
-      @return if($condition = true, $value, $fallback);
+    @function when-true(--condition, --value, --fallback: initial) {
+      @return if(
+        var(--condition) = true: var(--value);
+        else: var(--fallback)
+      );
     }
 
-    @function when-false($condition, $value, $fallback: initial) {
-      @return if($condition = false, $value, $fallback);
+    @function when-false(--condition, --value, --fallback: initial) {
+      @return if(
+        var(--condition) = false: var(--value);
+        else: var(--fallback)
+      );
     }
 
     .button {

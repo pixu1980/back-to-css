@@ -64,6 +64,64 @@ pnpm run rel:patch
 5. Document new attribute contracts inside this README if they affect other contributors.
 6. Run `pnpm run format:prettier` and `pnpm run format:biome` before committing.
 
+## Slide Structure
+
+All slide files follow a numbered convention: `_XX-name.html`. Theory slides use `_01` through `_06`, in depth patterns use `_98`, and demo hubs use `_99`.
+
+```
+src/slides/topics/
+├── attr/
+│   ├── _01-what-is-attr.html
+│   ├── _02-typed-syntax.html
+│   ├── _03-supported-types.html
+│   ├── _04-attr-in-calc.html
+│   ├── _05-html-as-state.html
+│   ├── _06-attr-to-vars.html
+│   ├── _98-attr-in-depth.html
+│   ├── _99-attr-demo-hub.html
+│   └── index.html
+├── if/
+│   ├── _01-what-is-if.html
+│   ├── _02-comparisons.html
+│   ├── _03-if-with-attr.html
+│   ├── _04-nested-if.html
+│   ├── _05-if-vs-classes.html
+│   ├── _06-use-cases.html
+│   ├── _98-if-in-depth.html
+│   ├── _99-if-demo-hub.html
+│   └── index.html
+├── functions/
+│   ├── _01-what-is-function.html
+│   ├── _02-parameters.html
+│   ├── _03-math-functions.html
+│   ├── _04-functions-with-if.html
+│   ├── _05-composing.html
+│   ├── _06-use-cases.html
+│   ├── _98-functions-in-depth.html
+│   ├── _99-function-demo-hub.html
+│   └── index.html
+├── systems/
+│   ├── _01-component-contracts.html
+│   ├── _02-theme-engine.html
+│   ├── _03-multi-element-sync.html
+│   ├── _04-timeline-controls.html
+│   ├── _05-js-sync.html
+│   ├── _06-forms-and-attr.html
+│   ├── _07-dashboard-layout.html
+│   ├── _08-token-pipeline.html
+│   ├── _09-system-accessibility.html
+│   ├── _99-systems-demo-hub.html
+│   └── index.html
+└── case-studies/
+    ├── _01-case-flux-capacitor.html
+    ├── _02-case-flux-dashboard.html
+    ├── _03-case-88mph.html
+    ├── _04-case-past-future.html
+    ├── _05-case-device-hand-off.html
+    ├── _99-case-lessons.html
+    └── index.html
+```
+
 ## Resources
 
 - [MDN: attr() typed syntax](https://developer.mozilla.org/docs/Web/CSS/attr)
