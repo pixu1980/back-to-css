@@ -305,7 +305,7 @@
   <small balance="">Each type tells CSS how to parse and use the attribute value.</small>
 </section>
 <section data-topic="foundations" data-menu-title="Supported types">
-    <p balance=""><mark>Supported types</mark> include: angle, color, custom-ident, image, integer, length, length-percentage, number, percentage, resolution, string, time, transform-function</p>
+  <p balance=""><mark>Supported types</mark> include: angle, color, custom-ident, image, integer, length, length-percentage, number, percentage, resolution, string, time, transform-function</p>
 </section>
 <section data-topic="foundations" data-menu-title="Supported types">
   <h4>Numeric types</h4>
@@ -529,23 +529,18 @@
   <h3>What is <mark>if()</mark>?</h3>
   <small balance="">Conditional logic in CSS. Choose values based on conditions.</small>
 </section>
-<!-- <section data-topic="branching" data-menu-title="What is if()">
-  <h4>The ternary pattern</h4>
-  <pre>
-    <code data-trim data-line-numbers class="hljs css">
-    if( condition, value-if-true, value-if-false )
+<section data-topic="foundations" data-menu-title="What is attr()">
+  <h4>The basic <mark>syntax</mark></h4>
+  <pre>    <code data-trim="" data-line-numbers="" class="hljs css">
+      if(
+        condition1: condition1-true-value;
+        ...
+        conditionX: conditionX-true-value;
+        else: default-value
+      )
     </code>
   </pre>
-  <dl class="syntax-breakdown">
-    <dt><code>condition</code></dt>
-    <dd>A comparison that evaluates to true or false</dd>
-    <dt><code>value-if-true</code></dt>
-    <dd>Used when condition is true</dd>
-    <dt><code>value-if-false</code></dt>
-    <dd>Used when condition is false</dd>
-  </dl>
-  <small balance> Think of it like JavaScript's ternary: <code>condition ? a : b</code> </small>
-</section> -->
+</section>
 
   <!-- Slide 2: Comparison operators -->
 <section data-topic="branching" data-menu-title="Comparisons">
@@ -688,7 +683,7 @@
     .button.is-loading { pointer-events: none; }
     </code>
   </pre>
-  <small balance="">7 selectors, class management in JS, easy to get out of sync.</small>
+  <small balance="">7 selectors, class management in JS, easier to get out of sync</small>
 </section>
 <section data-topic="branching" data-menu-title="if() approach">
   <h4>After: attribute driven with if()</h4>
@@ -718,7 +713,7 @@
     }
     </code>
   </pre>
-  <small balance="">1 selector, all logic in CSS, always in sync with HTML state.</small>
+  <small balance="">1 selector only, all logic in CSS, always in sync with HTML state</small>
 </section>
 
   <!-- Slide 6: if() use cases -->
@@ -1223,7 +1218,10 @@
   <section data-topic="case-studies" data-menu-title="Flux Capacitor" class="flux-capacitor-slide">
   <h3>The <mark>Flux Capacitor</mark></h3>
   <h4>What makes time travel possible</h4>
-  <small balance="">Pure CSS recreation of the iconic device. No JavaScript, just gradients, masks, and keyframe animations working in harmony.</small>
+  <small balance="">
+    Pure CSS recreation of the iconic device. <mark>No images</mark>, <mark>No JavaScript</mark>, just gradients, masks, and keyframe animations working in harmony.
+    <a href="https://codepen.io/pixu1980/pen/pvyamKO" target="_blank" rel="noopener noreferrer">See this on Codepen</a>
+  </small>
 </section>
 <section data-topic="case-studies" data-menu-title="Flux Capacitor" class="flux-capacitor-slide">
   <flux-capacitor>
@@ -1353,7 +1351,7 @@
 <section class="slide slide--demo" data-background-color="var(--btf-gray-dark)">
   <h3>Case Study: Fretboard</h3>
   <p balance="">Custom elements + typed attr() = dynamic chord diagrams</p>
-
+  <a href="https://codepen.io/pixu1980/pen/WbwybVQ" target="_blank" rel="noopener noreferrer">See this on Codepen</a>
   <comparison>
     <left style="place-content: center; place-items: center">
       <fret-board-wrapper>
@@ -1481,15 +1479,15 @@
   <small balance="">Three releases, three truths about attribute driven CSS.</small>
   <small>
     <ol>
-      <li>
+      <li class="fragment">
         <mark>Contracts win</mark> <br>
         Document <mark>data-*</mark> invariants and Baseline status next to them. Future teams thank you.
       </li>
-      <li>
+      <li class="fragment">
         <mark>CSS is logic</mark> <br>
         <mark>attr()</mark>, <mark>if()</mark>, and <mark>@function</mark> handled 90% of branching. JS only mirrored state.
       </li>
-      <li>
+      <li class="fragment">
         <mark>Accessibility improves</mark> <br>
         The same attributes power live regions, toggles, and telemetry strings. <mark>Less drift, more clarity</mark>.
       </li>
@@ -1504,8 +1502,10 @@
 <section>
   <section data-transition="convex">
     <h4>Wrapping up</h4>
-    <small balance="">HTML attributes become the state layer. CSS <mark>attr()</mark>, <mark>if()</mark>, and <mark>@function</mark> deliver the logic. Together they form a reactive system that flows through the
-      cascade.</small>
+    <small balance="">
+      HTML attributes become the state layer. CSS <mark>attr()</mark>, <mark>if()</mark>, and <mark>@function</mark> deliver the logic. Together they form a reactive system that flows through the
+      cascade.
+    </small>
   </section>
   <section data-transition="convex">
     <comparison>
@@ -1513,12 +1513,12 @@
         <h4>Pros</h4>
         <small>
           <ul>
-            <li class="fragment">Single source of truth in markup</li>
-            <li class="fragment">No runtime JS for state changes</li>
-            <li class="fragment">Debuggable in DevTools Elements panel</li>
-            <li class="fragment">Zero bundle for UI reactivity</li>
-            <li class="fragment">Progressive enhancement by default</li>
-            <li class="fragment">Framework agnostic architecture</li>
+            <li class="fragment"><mark>Single source of truth</mark> in markup</li>
+            <li class="fragment"><mark>No runtime JS</mark> for state changes</li>
+            <li class="fragment"><mark>Debuggable</mark> in DevTools panel</li>
+            <li class="fragment"><mark>Zero bundle</mark> for UI reactivity</li>
+            <li class="fragment">Progressive <mark>enhancement</mark></li>
+            <li class="fragment"><mark>Framework agnostic</mark> architecture</li>
           </ul>
         </small>
       </left>
@@ -1528,10 +1528,10 @@
           <ul>
             <li class="fragment">Browser support still incomplete</li>
             <li class="fragment">Tooling and linter gaps</li>
-            <li class="fragment">Limited complex logic expressiveness</li>
+            <li class="fragment">Limited logic expressiveness</li>
             <li class="fragment">Requires <mark>@supports</mark> fallbacks</li>
-            <li class="fragment">Learning curve for teams new to CSS logic</li>
-            <li class="fragment">Potential cascade debugging complexity</li>
+            <li class="fragment">Learning curve for CSS newbies</li>
+            <li class="fragment">Potential debugging issues</li>
           </ul>
         </small>
       </right>
@@ -1539,9 +1539,19 @@
   </section>
   <section data-transition="convex">
     <h4>Conclusions</h4>
-    <small balance="">The leap from JavaScript driven UI to CSS driven UI is already happening. Start small: pick one component, move its state to attributes, and watch the cascade handle the rest. The flux
-      capacitor powers the time machine. Your stylesheets can power the interface.</small>
-    <small><br>The UI jumps at <mark>88 mph</mark>.</small>
+    <small balance="">
+      The leap from JavaScript driven UI to CSS driven UI <mark>is already happening</mark>. Start small: <mark>pick one</mark> component, <mark>move state to attributes</mark>, and watch the cascade
+      handle the rest.
+    </small>
+  </section>
+  <section data-transition="convex">
+    <p balance="">As the flux capacitor powers the time travel, your stylesheets can <mark>power the interface</mark>.</p>
+  </section>
+  <section data-transition="convex">
+    <figure>
+      <img src="time-travel.f3dfbab4.gif" width="70%" alt="">
+    </figure>
+    <h3>The UI jumps at <mark>88 mph</mark>.</h3>
   </section>
 </section>
 
