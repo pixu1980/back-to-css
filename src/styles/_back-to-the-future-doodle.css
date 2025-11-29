@@ -8,9 +8,12 @@
 	back-to-the-future-doodle {
 		display: block;
 		margin: auto;
-		width: 60vw;
 		transform: rotateY(30deg);
-
+		
+		:where(h1, h2, h3, h4) {
+			white-space: nowrap;
+		}
+		
 		h1,
 		h4 {
 			font-family: "Six Caps";

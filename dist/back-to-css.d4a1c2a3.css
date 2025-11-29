@@ -15288,10 +15288,13 @@
   }
 
   back-to-the-future-doodle {
-    width: 60vw;
     margin: auto;
     display: block;
     transform: rotateY(30deg);
+
+    & :where(h1, h2, h3, h4) {
+      white-space: nowrap;
+    }
 
     & h1, & h4 {
       color: #fff;
@@ -16866,4 +16869,4 @@
     --string-note-mute-open-c: #eceff1;
   }
 }
-/*# sourceMappingURL=back-to-css.d2c046dd.css.map */
+/*# sourceMappingURL=back-to-css.d4a1c2a3.css.map */
